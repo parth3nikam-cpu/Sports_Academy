@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Peak Sports Academy helps athletes build skills, confidence, and character.">
+  <title>Peak Sports Academy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#home" aria-label="Peak Sports Academy home">
+      <span class="logo-mark">P</span>
+      <span>Peak Sports Academy</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+      <a href="#programs">Programs</a>
+      <a href="#about">About</a>
+      <a href="#coaches">Coaches</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Join the Academy</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">Train with purpose. Compete with confidence.</p>
+        <h1>Build the athlete.<br><span>Shape the future.</span></h1>
+        <p class="hero-copy">Expert coaching, supportive teams, and proven programs for athletes of every level.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#programs">Explore Programs</a>
+          <a class="button button-secondary" href="#about">Discover Our Approach</a>
+        </div>
+        <div class="hero-stats" aria-label="Academy highlights">
+          <div><strong>12+</strong><span>Programs</span></div>
+          <div><strong>30</strong><span>Expert Coaches</span></div>
+          <div><strong>500+</strong><span>Active Athletes</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-card">
+          <span>Next session</span>
+          <strong>Summer Training Camp</strong>
+          <small>Registration now open</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programs">
+      <div class="section-heading">
+        <p class="eyebrow">Find your game</p>
+        <h2>Programs built for progress</h2>
+        <p>From first fundamentals to elite performance, every program combines smart training with a positive team culture.</p>
+      </div>
+      <div class="program-grid">
+        <article class="program-card">
+          <span class="card-number">01</span>
+          <h3>Youth Development</h3>
+          <p>Fun, age-appropriate coaching that builds strong fundamentals and a lifelong love of sport.</p>
+          <a href="#contact">Learn more <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="program-card featured">
+          <span class="card-number">02</span>
+          <h3>Performance Training</h3>
+          <p>Focused strength, speed, agility, and sport-specific training for competitive athletes.</p>
+          <a href="#contact">Learn more <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="program-card">
+          <span class="card-number">03</span>
+          <h3>Team Camps</h3>
+          <p>High-energy camps designed to sharpen skills, strengthen teamwork, and build confidence.</p>
+          <a href="#contact">Learn more <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div>
+        <p class="eyebrow">More than training</p>
+        <h2>Champions on the field and beyond it</h2>
+      </div>
+      <div>
+        <p>At Peak, we coach the whole athlete. Our experienced team creates a safe, ambitious environment where discipline, resilience, leadership, and joy grow alongside athletic ability.</p>
+        <ul class="check-list">
+          <li>Certified, athlete-first coaches</li>
+          <li>Personal development plans</li>
+          <li>Inclusive and supportive community</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="coaches section" id="coaches">
+      <div class="section-heading">
+        <p class="eyebrow">Great people. Great coaching.</p>
+        <h2>Learn from leaders</h2>
+        <p>Our coaches bring competitive experience, professional qualifications, and a shared commitment to every athlete.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="eyebrow">Your next chapter starts here</p>
+      <h2>Ready to raise your game?</h2>
+      <p>Tell us about your goals and we’ll help you find the right program.</p>
+      <a class="button button-light" href="mailto:hello@peaksports.example">Contact the Academy</a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#home"><span class="logo-mark">P</span><span>Peak Sports Academy</span></a>
+    <p>Train hard. Grow strong. Play with purpose.</p>
+    <p>&copy; <span id="current-year"></span> Peak Sports Academy</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
