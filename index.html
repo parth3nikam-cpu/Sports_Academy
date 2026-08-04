@@ -103,10 +103,58 @@
     </section>
 
     <section class="contact" id="contact">
-      <p class="eyebrow">Your next chapter starts here</p>
-      <h2>Ready to raise your game?</h2>
-      <p>Tell us about your goals and we’ll help you find the right program.</p>
-      <a class="button button-light" href="mailto:hello@peaksports.example">Contact the Academy</a>
+      <div class="contact-intro">
+        <p class="eyebrow">Your next chapter starts here</p>
+        <h2>Ready to raise your game?</h2>
+        <p>Share a few details and our academy team will help you find the right sport and training program.</p>
+        <div class="contact-note">
+          <strong>What happens next?</strong>
+          <span>Our team will review your message and get in touch to discuss your goals.</span>
+        </div>
+      </div>
+
+      <form class="contact-form" id="academy-contact-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="mobile">Mobile</label>
+            <input id="mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel" placeholder="Your phone number" required>
+          </div>
+          <div class="form-field">
+            <label for="sport">Sport</label>
+            <select id="sport" name="sport" required>
+              <option value="" selected disabled>Select a sport</option>
+              <option value="soccer">Soccer</option>
+              <option value="basketball">Basketball</option>
+              <option value="cricket">Cricket</option>
+              <option value="tennis">Tennis</option>
+              <option value="volleyball">Volleyball</option>
+              <option value="swimming">Swimming</option>
+              <option value="track-and-field">Track &amp; Field</option>
+              <option value="badminton">Badminton</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your goals, experience level, or any questions you have." required></textarea>
+        </div>
+
+        <button class="button form-submit" type="submit">Send Message</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
