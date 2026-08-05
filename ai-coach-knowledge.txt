@@ -185,3 +185,43 @@ A: Hi! I can help with sports, age groups, equipment, schedules, fees, coaching,
 Q: Thank you
 Keywords: thanks thank you helpful
 A: You are welcome! If you need more help, ask another question or use the contact form to speak with the academy team.
+---
+Q: Is there a required academy uniform?
+Keywords: uniform jersey clothing dress code required shirt shorts
+A: Uniform requirements depend on the sport and program. For a first session, wear comfortable athletic clothing and suitable shoes unless the academy provides different instructions. Team uniforms may be required for competitions.
+---
+Q: What happens when training is canceled because of weather?
+Keywords: weather rain storm heat snow cancellation outdoor training
+A: Outdoor sessions may be changed, delayed, moved, or canceled when weather creates unsafe conditions. The academy will use the registered contact details to share updates and explain any makeup-session policy.
+---
+Q: Are indoor training facilities available?
+Keywords: indoor facility gym court field pool weather
+A: Facility availability depends on the sport and scheduled venue. Contact the academy to confirm whether your program trains indoors, outdoors, or uses both types of facilities.
+---
+Q: Is parking available at the academy?
+Keywords: parking car drop off pickup transportation directions
+A: Parking and drop-off arrangements depend on the training venue. Ask for the current venue instructions before your first visit and follow all posted pickup and traffic rules.
+---
+Q: Does the academy provide transportation?
+Keywords: transportation bus shuttle pickup drop off travel
+A: Transportation availability depends on the program and event. Families should normally plan their own travel unless the academy confirms a supervised bus or shuttle arrangement in writing.
+---
+Q: Can the academy support athletes with disabilities?
+Keywords: disability disabilities accessibility accessible inclusion accommodation special needs
+A: We want every athlete to have a positive and safe experience. Share the athlete's accessibility needs with the academy so the team can discuss suitable programs, facility access, reasonable accommodations, and any specialist support required.
+---
+Q: How do parents receive progress updates?
+Keywords: progress report feedback assessment development parents update
+A: Coaches may provide informal feedback, periodic assessments, or development discussions depending on the program. Ask the coach how progress is measured and when families can expect updates.
+---
+Q: Can photos or videos be taken during training?
+Keywords: photo video camera recording privacy consent social media
+A: Photography and video rules protect athlete privacy and may vary by venue or event. Follow the academy's consent policy and do not photograph other children without permission.
+---
+Q: What should I do with lost property?
+Keywords: lost property lost and found missing bottle clothing equipment
+A: Label personal items with the athlete's name. If something is lost, contact the academy promptly with a description, session date, and training venue. Unclaimed-item policies may vary by facility.
+---
+Q: Can my child attend with a friend?
+Keywords: friend buddy together same group teammate request
+A: Friends may request the same introductory session or group, but placement depends on age, skill level, program fit, and available space. Mention the request during registration and the academy will try to help when appropriate.
