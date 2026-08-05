@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Answers to common questions about Peak Sports Academy programs, equipment, fees, schedules, and registration.">
+  <title>Frequently Asked Questions | Peak Sports Academy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="faq-page">
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Peak Sports Academy home">
+      <span class="logo-mark">P</span>
+      <span>Peak Sports Academy</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#coaches">Coaches</a>
+      <a href="faq.html" aria-current="page">FAQ</a>
+      <a class="nav-cta" href="index.html#contact">Join the Academy</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="faq-hero">
+      <p class="eyebrow">Help center</p>
+      <h1>Questions? Meet your answers.</h1>
+      <p>Find clear information about programs, equipment, schedules, fees, registration, safety, and more.</p>
+      <label class="faq-search" for="faq-search-input">
+        <span aria-hidden="true">Search</span>
+        <input id="faq-search-input" type="search" placeholder="Try: equipment for cricket" autocomplete="off">
+      </label>
+    </section>
+
+    <section class="faq-content" aria-labelledby="faq-heading">
+      <div class="faq-content-heading">
+        <div>
+          <p class="eyebrow">Explore topics</p>
+          <h2 id="faq-heading">Frequently asked questions</h2>
+        </div>
+        <p id="faq-count" aria-live="polite">Loading questions...</p>
+      </div>
+
+      <div class="faq-filters" id="faq-filters" aria-label="Filter questions by topic">
+        <button class="active" type="button" data-category="All">All</button>
+        <button type="button" data-category="Programs">Programs</button>
+        <button type="button" data-category="Equipment">Equipment</button>
+        <button type="button" data-category="Schedule">Schedule</button>
+        <button type="button" data-category="Fees">Fees</button>
+        <button type="button" data-category="Registration">Registration</button>
+        <button type="button" data-category="Safety">Safety</button>
+        <button type="button" data-category="General">General</button>
+      </div>
+
+      <div class="faq-list" id="faq-list"></div>
+      <div class="faq-empty" id="faq-empty" hidden>
+        <strong>No matching questions found.</strong>
+        <p>Try another search or ask our academy team directly.</p>
+      </div>
+    </section>
+
+    <section class="faq-cta">
+      <div>
+        <p class="eyebrow">Still need help?</p>
+        <h2>Talk with our academy team</h2>
+        <p>Tell us the athlete's age, preferred sport, and goals. We will help you with the next step.</p>
+      </div>
+      <a class="button button-primary" href="index.html#contact">Contact the Academy</a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="index.html"><span class="logo-mark">P</span><span>Peak Sports Academy</span></a>
+    <p>Train hard. Grow strong. Play with purpose.</p>
+    <p>&copy; <span id="current-year"></span> Peak Sports Academy</p>
+  </footer>
+
+  <script src="faq.js"></script>
+</body>
+</html>
