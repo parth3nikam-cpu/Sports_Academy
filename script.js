@@ -169,6 +169,14 @@ async function askCoach(question) {
   if (!cleanQuestion) return;
   addCoachMessage(cleanQuestion, 'user');
   await knowledgeReady;
+  if (/custom subscription|custom plan|build.*plan|make.*subscription|own subscription|choose.*days/.test(cleanQuestion.toLowerCase())) {
+    window.setTimeout(() => addCoachMessage(
+      'You can create a custom sports subscription by choosing your sport and any number of training days from 1 to 365. Discounts are applied automatically.',
+      'assistant',
+      { href: 'custom-subscription.html', label: 'Build a custom subscription' }
+    ), 350);
+    return;
+  }
   if (/subscription|subscribe|membership|payment|pay|hourly|monthly|quarterly|annual|six month|6 month/.test(cleanQuestion.toLowerCase())) {
     window.setTimeout(() => addCoachMessage(
       'You can compare all Peak training subscriptions and choose a payment plan on our subscriptions page.',
