@@ -241,3 +241,15 @@ A: The monthly subscription is $350, and the quarterly subscription is $650 for 
 Q: How much are the six-month and annual subscriptions?
 Keywords: six month 6 months annual yearly year subscription 800 1200 dollars
 A: The six-month subscription is $800, and the annual subscription is $1,200. Visit the Subscriptions page to choose a plan and continue to registration.
+---
+Q: Can I build my own custom subscription?
+Keywords: custom subscription build own plan choose days flexible days
+A: Yes. Use the Build a Plan page to choose a sport and any number of one-hour training days from 1 to 365. The page calculates your price and discount automatically.
+---
+Q: What discounts are available for a custom subscription?
+Keywords: custom plan discount 5 percent 10 percent 15 percent 50 70 120 days
+A: Custom plans receive 5% off for 51 to 69 days, 10% off for 70 to 120 days, and 15% off for 121 to 365 days. Plans from 1 to 50 days use the standard flexible rate.
+---
+Q: How much does a custom training plan cost?
+Keywords: custom training plan price cost rate calculate 15 day hour
+A: Custom plans use one one-hour training session per selected day at $15 per day before discounts. Choose 1 to 365 days on the Build a Plan page to see the regular price, savings, and estimated total.
