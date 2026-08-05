@@ -187,7 +187,8 @@ footer p { margin: 0; }
 .custom-hero-stat strong { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1; }
 .custom-hero-stat span { font-weight: 700; }
 .discount-banner-section { padding: 90px 6vw; }
-.discount-banner-image { display: block; width: min(1200px, 100%); aspect-ratio: 1.9 / 1; margin: 0 auto; background-color: var(--navy); background-image: url("assets/custom-plan-discounts.png"); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
+.discount-banner-picture { display: block; width: min(1200px, 100%); margin: 0 auto; }
+.discount-banner-image { display: block; width: 100%; height: auto; object-fit: contain; border-radius: var(--radius); box-shadow: var(--shadow); }
 .plan-builder { display: grid; grid-template-columns: 1fr .8fr; align-items: start; gap: clamp(40px, 8vw, 110px); padding: 95px 8vw; background: var(--white); }
 .builder-intro { color: var(--muted); }
 .builder-form-panel form { display: grid; gap: 22px; margin-top: 35px; }
