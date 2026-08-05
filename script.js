@@ -15,6 +15,11 @@ navigation.addEventListener('click', (event) => {
 
 document.querySelector('#current-year').textContent = new Date().getFullYear();
 
+const requestedPlan = new URLSearchParams(window.location.search).get('plan');
+if (requestedPlan) {
+  document.querySelector('#message').value = requestedPlan;
+}
+
 const contactForm = document.querySelector('#academy-contact-form');
 const formStatus = document.querySelector('#form-status');
 const submitButton = contactForm.querySelector('button[type="submit"]');
@@ -144,10 +149,17 @@ function getCoachAnswer(question) {
   return coachAnswers.fallback;
 }
 
-function addCoachMessage(message, sender) {
+function addCoachMessage(message, sender, link = null) {
   const messageElement = document.createElement('div');
   messageElement.className = `coach-message ${sender}-message`;
   messageElement.textContent = message;
+  if (link) {
+    const actionLink = document.createElement('a');
+    actionLink.className = 'coach-action-link';
+    actionLink.href = link.href;
+    actionLink.textContent = link.label;
+    messageElement.appendChild(actionLink);
+  }
   coachMessages.appendChild(messageElement);
   coachMessages.scrollTop = coachMessages.scrollHeight;
 }
@@ -157,6 +169,14 @@ async function askCoach(question) {
   if (!cleanQuestion) return;
   addCoachMessage(cleanQuestion, 'user');
   await knowledgeReady;
+  if (/subscription|subscribe|membership|payment|pay|hourly|monthly|quarterly|annual|six month|6 month/.test(cleanQuestion.toLowerCase())) {
+    window.setTimeout(() => addCoachMessage(
+      'You can compare all Peak training subscriptions and choose a payment plan on our subscriptions page.',
+      'assistant',
+      { href: 'subscriptions.html', label: 'View subscriptions & payment' }
+    ), 350);
+    return;
+  }
   const answer = findKnowledgeAnswer(cleanQuestion) || getCoachAnswer(cleanQuestion);
   window.setTimeout(() => addCoachMessage(answer, 'assistant'), 350);
 }
