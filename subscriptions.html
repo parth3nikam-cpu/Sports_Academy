@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Choose a flexible training subscription at Peak Sports Academy.">
+  <title>Subscriptions &amp; Payment | Peak Sports Academy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="subscriptions-page">
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Peak Sports Academy home">
+      <span class="logo-mark">P</span>
+      <span>Peak Sports Academy</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#about">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="subscriptions.html" aria-current="page">Subscriptions</a>
+      <a class="nav-cta" href="index.html#contact">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="pricing-hero">
+      <p class="eyebrow">Flexible training plans</p>
+      <h1>Choose your pace.<br><span>Build your game.</span></h1>
+      <p>Start with one session or commit to long-term progress. Select the plan that works best for your athlete.</p>
+    </section>
+
+    <section class="pricing-section" aria-labelledby="pricing-heading">
+      <div class="section-heading pricing-heading">
+        <p class="eyebrow">Simple pricing</p>
+        <h2 id="pricing-heading">Training subscriptions</h2>
+        <p>All prices are shown in US dollars. Program schedules and available sports are confirmed during registration.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <p class="plan-label">Flexible</p>
+          <h3>Hourly</h3>
+          <p class="plan-price"><span>$</span>15<small>/ hour</small></p>
+          <p>Perfect for trial sessions, extra practice, or flexible training.</p>
+          <button type="button" data-plan="Hourly" data-price="$15 per hour">Choose Hourly</button>
+        </article>
+
+        <article class="pricing-card">
+          <p class="plan-label">Consistent</p>
+          <h3>Monthly</h3>
+          <p class="plan-price"><span>$</span>350<small>/ month</small></p>
+          <p>A consistent monthly routine for athletes building momentum.</p>
+          <button type="button" data-plan="Monthly" data-price="$350 per month">Choose Monthly</button>
+        </article>
+
+        <article class="pricing-card">
+          <p class="plan-label">Focused</p>
+          <h3>Quarterly</h3>
+          <p class="plan-price"><span>$</span>650<small>/ 3 months</small></p>
+          <p>A focused training block with time to develop lasting skills.</p>
+          <button type="button" data-plan="Quarterly" data-price="$650 per 3 months">Choose Quarterly</button>
+        </article>
+
+        <article class="pricing-card featured-plan">
+          <span class="popular-badge">Best value</span>
+          <p class="plan-label">Committed</p>
+          <h3>Six Months</h3>
+          <p class="plan-price"><span>$</span>800<small>/ 6 months</small></p>
+          <p>Long-term coaching and steady development at our strongest mid-term value.</p>
+          <button type="button" data-plan="Six Months" data-price="$800 per 6 months">Choose Six Months</button>
+        </article>
+
+        <article class="pricing-card">
+          <p class="plan-label">All season</p>
+          <h3>Annual</h3>
+          <p class="plan-price"><span>$</span>1,200<small>/ year</small></p>
+          <p>A full year of structured development and academy support.</p>
+          <button type="button" data-plan="Annual" data-price="$1,200 per year">Choose Annual</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="checkout-section" id="payment" aria-labelledby="payment-heading">
+      <div class="checkout-copy">
+        <p class="eyebrow">Payment</p>
+        <h2 id="payment-heading">Complete your plan request</h2>
+        <p>Select a plan above, then continue to registration. Our team will confirm sport availability and send you a secure payment link.</p>
+        <ul class="check-list">
+          <li>No card details collected on this page</li>
+          <li>Schedule confirmed before payment</li>
+          <li>Secure payment link sent by the academy</li>
+        </ul>
+      </div>
+
+      <div class="checkout-card">
+        <span>Selected subscription</span>
+        <strong id="selected-plan">Choose a plan above</strong>
+        <p id="selected-price">Your price will appear here.</p>
+        <a class="button checkout-button disabled" id="continue-registration" href="index.html#contact" aria-disabled="true">Continue to Registration</a>
+        <small>Payment is not charged until the academy confirms your enrollment.</small>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="index.html"><span class="logo-mark">P</span><span>Peak Sports Academy</span></a>
+    <p>Train hard. Grow strong. Play with purpose.</p>
+    <p>&copy; <span id="current-year"></span> Peak Sports Academy</p>
+  </footer>
+
+  <script src="subscriptions.js"></script>
+</body>
+</html>
