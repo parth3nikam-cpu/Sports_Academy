@@ -225,3 +225,19 @@ A: Label personal items with the athlete's name. If something is lost, contact t
 Q: Can my child attend with a friend?
 Keywords: friend buddy together same group teammate request
 A: Friends may request the same introductory session or group, but placement depends on age, skill level, program fit, and available space. Mention the request during registration and the academy will try to help when appropriate.
+---
+Q: What subscription plans are available?
+Keywords: subscription subscriptions membership plans pricing payment hourly monthly quarterly annual
+A: Peak offers hourly training for $15 per hour, monthly training for $350, quarterly training for $650, a six-month plan for $800, and an annual plan for $1,200. Visit the Subscriptions page to compare and choose a plan.
+---
+Q: How much is the hourly subscription?
+Keywords: hourly pay per session one hour subscription 15 dollars
+A: The flexible hourly training option is $15 per hour. Visit the Subscriptions page to select it and continue to registration.
+---
+Q: How much are the monthly and quarterly subscriptions?
+Keywords: monthly quarterly three months subscription 350 650 dollars
+A: The monthly subscription is $350, and the quarterly subscription is $650 for three months. Visit the Subscriptions page to compare the plans.
+---
+Q: How much are the six-month and annual subscriptions?
+Keywords: six month 6 months annual yearly year subscription 800 1200 dollars
+A: The six-month subscription is $800, and the annual subscription is $1,200. Visit the Subscriptions page to choose a plan and continue to registration.
