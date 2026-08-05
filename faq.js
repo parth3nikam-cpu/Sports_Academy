@@ -1,118 +1,174 @@
-const menuButton = document.querySelector('.menu-toggle');
-const navigation = document.querySelector('.main-nav');
-const searchInput = document.querySelector('#faq-search-input');
-const faqList = document.querySelector('#faq-list');
-const faqCount = document.querySelector('#faq-count');
-const faqEmpty = document.querySelector('#faq-empty');
-const filterButtons = document.querySelectorAll('[data-category]');
-
-let faqEntries = [];
-let activeCategory = 'All';
-
-const starterEntries = [
-  { question: 'Which sport suits an 8-year-old?', keywords: 'child age beginner sport', answer: 'Soccer, basketball, swimming, tennis, and beginner cricket can all suit an 8-year-old. The best choice depends on the child\'s interests. We recommend an introductory session before choosing.' },
-  { question: 'What equipment is needed?', keywords: 'equipment gear kit', answer: 'Most beginners need comfortable sports clothing, suitable athletic shoes, and a water bottle. Specialist equipment depends on the sport, so ask us before buying expensive gear.' },
-  { question: 'What are the academy timings?', keywords: 'schedule time weekend', answer: 'Timings vary by sport, age group, and season. Contact us with your preferred sport for the current schedule.' },
-  { question: 'What is the fee?', keywords: 'fees cost price', answer: 'Fees vary by sport, program length, session frequency, and training level. Use the contact form for the current rate.' },
-  { question: 'What subscription plans are available?', keywords: 'subscription membership hourly monthly quarterly annual payment', answer: 'Peak offers hourly training for $15 per hour, monthly training for $350, quarterly training for $650, a six-month plan for $800, and an annual plan for $1,200.' },
-  { question: 'How can I register?', keywords: 'join enroll sign up', answer: 'Complete the contact form with your details and preferred sport. Our team will contact you with schedule, fee, placement, and enrollment information.' }
-];
-
-function parseKnowledge(fileText) {
-  return fileText.split(/^---\s*$/m).map((block) => {
-    const question = block.match(/^Q:\s*(.+)$/m)?.[1]?.trim();
-    const keywords = block.match(/^Keywords:\s*(.+)$/m)?.[1]?.trim() || '';
-    const answer = block.match(/^A:\s*([\s\S]+)$/m)?.[1]?.trim();
-    return question && answer ? { question, keywords, answer } : null;
-  }).filter(Boolean);
-}
-
-function getCategory(entry) {
-  const text = `${entry.question} ${entry.keywords}`.toLowerCase();
-  if (/equipment|gear|bring|wear|kit|bat|ball|racket|goggles/.test(text)) return 'Equipment';
-  if (/fee|cost|price|payment|discount|refund|scholarship/.test(text)) return 'Fees';
-  if (/register|enroll|join|sign up|documents|change sports/.test(text)) return 'Registration';
-  if (/time|schedule|weekend|duration|days per week|miss|arrive/.test(text)) return 'Schedule';
-  if (/safe|safety|injury|medical|nutrition|eat|allergy/.test(text)) return 'Safety';
-  if (/sport|program|age|beginner|teen|adult|coach|competitive|private|camp|tournament/.test(text)) return 'Programs';
-  return 'General';
-}
-
-function isSubscriptionQuestion(entry) {
-  const text = `${entry.question} ${entry.keywords}`.toLowerCase();
-  return /subscription|subscribe|membership|hourly|monthly|quarterly|six month|6 months|annual|yearly/.test(text);
-}
-
-function createFaqItem(entry, index) {
-  const item = document.createElement('article');
-  const answerId = `faq-answer-${index}`;
-  item.className = 'faq-item';
-  item.innerHTML = `
-    <button class="faq-question" type="button" aria-expanded="false" aria-controls="${answerId}">
-      <span><small>${getCategory(entry)}</small>${entry.question}</span>
-      <i aria-hidden="true">+</i>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Answers to common questions about Peak Sports Academy programs, equipment, fees, schedules, and registration.">
+  <title>Frequently Asked Questions | Peak Sports Academy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="faq-page">
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Peak Sports Academy home">
+      <span class="logo-mark">P</span>
+      <span>Peak Sports Academy</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span><span></span>
     </button>
-    <div class="faq-answer" id="${answerId}" hidden><p></p></div>
-  `;
-  item.querySelector('.faq-answer p').textContent = entry.answer;
-  const button = item.querySelector('.faq-question');
-  const answer = item.querySelector('.faq-answer');
-  if (isSubscriptionQuestion(entry)) {
-    const subscriptionLink = document.createElement('a');
-    subscriptionLink.className = 'faq-subscription-link';
-    subscriptionLink.href = 'subscriptions.html';
-    subscriptionLink.textContent = 'View Subscriptions & Payment';
-    answer.appendChild(subscriptionLink);
-  }
-  button.addEventListener('click', () => {
-    const isOpen = button.getAttribute('aria-expanded') === 'true';
-    button.setAttribute('aria-expanded', String(!isOpen));
-    button.querySelector('i').textContent = isOpen ? '+' : '-';
-    answer.hidden = isOpen;
-  });
-  return item;
-}
+    <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#coaches">Coaches</a>
+      <a href="faq.html" aria-current="page">FAQ</a>
+      <a href="subscriptions.html">Subscriptions</a>
+      <a href="custom-subscription.html">Build a Plan</a>
+      <a class="nav-cta" href="index.html#contact">Join the Academy</a>
+    </nav>
+  </header>
 
-function renderFaqs() {
-  const searchTerm = searchInput.value.trim().toLowerCase();
-  const visibleEntries = faqEntries.filter((entry) => {
-    const matchesCategory = activeCategory === 'All' || getCategory(entry) === activeCategory;
-    const matchesSearch = !searchTerm || `${entry.question} ${entry.keywords} ${entry.answer}`.toLowerCase().includes(searchTerm);
-    return matchesCategory && matchesSearch;
-  });
+  <main>
+    <section class="faq-hero">
+      <p class="eyebrow">Help center</p>
+      <h1>Questions? Meet your answers.</h1>
+      <p>Find clear information about programs, equipment, schedules, fees, registration, safety, and more.</p>
+      <label class="faq-search" for="faq-search-input">
+        <span aria-hidden="true">Search</span>
+        <input id="faq-search-input" type="search" placeholder="Try: equipment for cricket" autocomplete="off">
+      </label>
+    </section>
 
-  faqList.replaceChildren(...visibleEntries.map(createFaqItem));
-  faqCount.textContent = `${visibleEntries.length} ${visibleEntries.length === 1 ? 'question' : 'questions'}`;
-  faqEmpty.hidden = visibleEntries.length !== 0;
-}
+    <section class="faq-content" aria-labelledby="faq-heading">
+      <div class="faq-content-heading">
+        <div>
+          <p class="eyebrow">Explore topics</p>
+          <h2 id="faq-heading">Frequently asked questions</h2>
+        </div>
+        <p id="faq-count" aria-live="polite">Loading questions...</p>
+      </div>
 
-menuButton.addEventListener('click', () => {
-  const isOpen = navigation.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(isOpen));
-});
+      <div class="faq-filters" id="faq-filters" aria-label="Filter questions by topic">
+        <button class="active" type="button" data-category="All">All</button>
+        <button type="button" data-category="Programs">Programs</button>
+        <button type="button" data-category="Equipment">Equipment</button>
+        <button type="button" data-category="Schedule">Schedule</button>
+        <button type="button" data-category="Fees">Fees</button>
+        <button type="button" data-category="Registration">Registration</button>
+        <button type="button" data-category="Safety">Safety</button>
+        <button type="button" data-category="General">General</button>
+      </div>
 
-searchInput.addEventListener('input', renderFaqs);
+      <div class="faq-list" id="faq-list"></div>
+      <div class="faq-empty" id="faq-empty" hidden>
+        <strong>No matching questions found.</strong>
+        <p>Try another search or ask our academy team directly.</p>
+      </div>
+    </section>
 
-filterButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    activeCategory = button.dataset.category;
-    filterButtons.forEach((item) => item.classList.toggle('active', item === button));
-    renderFaqs();
-  });
-});
+    <section class="faq-cta">
+      <div>
+        <p class="eyebrow">Still need help?</p>
+        <h2>Talk with our academy team</h2>
+        <p>Tell us the athlete's age, preferred sport, and goals. We will help you with the next step.</p>
+      </div>
+      <a class="button button-primary" href="index.html#contact">Contact the Academy</a>
+    </section>
+  </main>
 
-document.querySelector('#current-year').textContent = new Date().getFullYear();
+  <footer>
+    <a class="logo" href="index.html"><span class="logo-mark">P</span><span>Peak Sports Academy</span></a>
+    <p>Train hard. Grow strong. Play with purpose.</p>
+    <p>&copy; <span id="current-year"></span> Peak Sports Academy</p>
+  </footer>
 
-fetch('ai-coach-knowledge.txt')
-  .then((response) => {
-    if (!response.ok) throw new Error('FAQ knowledge could not be loaded.');
-    return response.text();
-  })
-  .then((fileText) => {
-    faqEntries = parseKnowledge(fileText);
-    renderFaqs();
-  })
-  .catch(() => {
-    faqEntries = starterEntries;
-    renderFaqs();
-  });
+  <script src="faq.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Answers to common questions about Peak Sports Academy programs, equipment, fees, schedules, and registration.">
+  <title>Frequently Asked Questions | Peak Sports Academy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="faq-page">
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Peak Sports Academy home">
+      <span class="logo-mark">P</span>
+      <span>Peak Sports Academy</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#coaches">Coaches</a>
+      <a href="faq.html" aria-current="page">FAQ</a>
+      <a href="subscriptions.html">Subscriptions</a>
+      <a href="custom-subscription.html">Build a Plan</a>
+      <a class="nav-cta" href="index.html#contact">Join the Academy</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="faq-hero">
+      <p class="eyebrow">Help center</p>
+      <h1>Questions? Meet your answers.</h1>
+      <p>Find clear information about programs, equipment, schedules, fees, registration, safety, and more.</p>
+      <label class="faq-search" for="faq-search-input">
+        <span aria-hidden="true">Search</span>
+        <input id="faq-search-input" type="search" placeholder="Try: equipment for cricket" autocomplete="off">
+      </label>
+    </section>
+
+    <section class="faq-content" aria-labelledby="faq-heading">
+      <div class="faq-content-heading">
+        <div>
+          <p class="eyebrow">Explore topics</p>
+          <h2 id="faq-heading">Frequently asked questions</h2>
+        </div>
+        <p id="faq-count" aria-live="polite">Loading questions...</p>
+      </div>
+
+      <div class="faq-filters" id="faq-filters" aria-label="Filter questions by topic">
+        <button class="active" type="button" data-category="All">All</button>
+        <button type="button" data-category="Programs">Programs</button>
+        <button type="button" data-category="Equipment">Equipment</button>
+        <button type="button" data-category="Schedule">Schedule</button>
+        <button type="button" data-category="Fees">Fees</button>
+        <button type="button" data-category="Registration">Registration</button>
+        <button type="button" data-category="Safety">Safety</button>
+        <button type="button" data-category="General">General</button>
+      </div>
+
+      <div class="faq-list" id="faq-list"></div>
+      <div class="faq-empty" id="faq-empty" hidden>
+        <strong>No matching questions found.</strong>
+        <p>Try another search or ask our academy team directly.</p>
+      </div>
+    </section>
+
+    <section class="faq-cta">
+      <div>
+        <p class="eyebrow">Still need help?</p>
+        <h2>Talk with our academy team</h2>
+        <p>Tell us the athlete's age, preferred sport, and goals. We will help you with the next step.</p>
+      </div>
+      <a class="button button-primary" href="index.html#contact">Contact the Academy</a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="index.html"><span class="logo-mark">P</span><span>Peak Sports Academy</span></a>
+    <p>Train hard. Grow strong. Play with purpose.</p>
+    <p>&copy; <span id="current-year"></span> Peak Sports Academy</p>
+  </footer>
+
+  <script src="faq.js"></script>
+</body>
+</html>
