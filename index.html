@@ -164,6 +164,41 @@
     <p>&copy; <span id="current-year"></span> Peak Sports Academy</p>
   </footer>
 
+  <button class="coach-launcher" id="coach-launcher" type="button" aria-expanded="false" aria-controls="coach-assistant">
+    <span class="coach-launcher-icon" aria-hidden="true">AI</span>
+    <span>Ask Coach</span>
+  </button>
+
+  <aside class="coach-assistant" id="coach-assistant" aria-label="AI Coach Assistant" aria-hidden="true">
+    <header class="coach-header">
+      <div class="coach-avatar" aria-hidden="true">P</div>
+      <div>
+        <strong>Peak AI Coach</strong>
+        <span><i aria-hidden="true"></i> Online now</span>
+      </div>
+      <button class="coach-close" id="coach-close" type="button" aria-label="Close AI Coach">&times;</button>
+    </header>
+
+    <div class="coach-messages" id="coach-messages" aria-live="polite">
+      <div class="coach-message assistant-message">
+        Hi! I am your Peak AI Coach. Ask me about choosing a sport, equipment, academy timings, fees, or registration.
+      </div>
+      <div class="coach-suggestions" aria-label="Suggested questions">
+        <button type="button" data-question="Which sport suits an 8-year-old?">Sport for an 8-year-old</button>
+        <button type="button" data-question="What equipment is needed?">Equipment needed</button>
+        <button type="button" data-question="What are the academy timings?">Academy timings</button>
+        <button type="button" data-question="What is the fee?">Fees</button>
+        <button type="button" data-question="How can I register?">How to register</button>
+      </div>
+    </div>
+
+    <form class="coach-input-form" id="coach-input-form">
+      <label class="sr-only" for="coach-input">Ask the AI Coach a question</label>
+      <input id="coach-input" name="question" type="text" autocomplete="off" placeholder="Ask your coach..." required>
+      <button type="submit" aria-label="Send question">Send</button>
+    </form>
+  </aside>
+
   <script src="script.js"></script>
 </body>
 </html>
