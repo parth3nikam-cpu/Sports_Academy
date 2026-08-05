@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build a custom Peak Sports Academy subscription by choosing your sport and training days.">
+  <title>Build Your Subscription | Peak Sports Academy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="custom-plan-page">
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Peak Sports Academy home">
+      <span class="logo-mark">P</span>
+      <span>Peak Sports Academy</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+      <a href="index.html#programs">Programs</a>
+      <a href="faq.html">FAQ</a>
+      <a href="subscriptions.html">Subscriptions</a>
+      <a href="custom-subscription.html" aria-current="page">Build a Plan</a>
+      <a class="nav-cta" href="index.html#contact">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="custom-plan-hero">
+      <div>
+        <p class="eyebrow">Your sport. Your schedule.</p>
+        <h1>Build your own<br><span>training plan.</span></h1>
+        <p>Choose a sport and any number of training days from 1 to 365. Your package discount is calculated automatically.</p>
+      </div>
+      <div class="custom-hero-stat" aria-label="Custom plan benefit">
+        <strong>Up to 15% off</strong>
+        <span>Longer training packages reward your commitment.</span>
+      </div>
+    </section>
+
+    <section class="discount-banner-section" aria-labelledby="discount-heading">
+      <div class="section-heading pricing-heading">
+        <p class="eyebrow">Train more. Save more.</p>
+        <h2 id="discount-heading">Automatic package discounts</h2>
+        <p>Discounts are applied instantly based on the number of training days you choose.</p>
+      </div>
+      <img class="discount-banner-image" src="assets/custom-plan-discounts.png" alt="5% off for 51 to 69 days, 10% off for 70 to 120 days, and 15% off for 121 or more days">
+    </section>
+
+    <section class="plan-builder" id="plan-builder" aria-labelledby="builder-heading">
+      <div class="builder-form-panel">
+        <p class="eyebrow">Customize your subscription</p>
+        <h2 id="builder-heading">Create your plan</h2>
+        <p class="builder-intro">Pricing uses one one-hour training session per selected day at the flexible rate of $15 per hour.</p>
+
+        <form id="custom-plan-form">
+          <div class="builder-field">
+            <label for="training-days">How many training days?</label>
+            <select id="training-days" name="days" required>
+              <option value="" selected disabled>Select 1 to 365 days</option>
+            </select>
+            <small>Choose the total number of one-hour training days.</small>
+          </div>
+
+          <div class="builder-field">
+            <label for="custom-sport">Which sport?</label>
+            <select id="custom-sport" name="sport" required>
+              <option value="" selected disabled>Select a sport</option>
+              <option value="Soccer">Soccer</option>
+              <option value="Basketball">Basketball</option>
+              <option value="Cricket">Cricket</option>
+              <option value="Tennis">Tennis</option>
+              <option value="Volleyball">Volleyball</option>
+              <option value="Swimming">Swimming</option>
+              <option value="Track &amp; Field">Track &amp; Field</option>
+              <option value="Badminton">Badminton</option>
+            </select>
+            <small>Sport availability is confirmed during registration.</small>
+          </div>
+        </form>
+      </div>
+
+      <aside class="custom-summary" aria-label="Custom subscription summary">
+        <p class="summary-label">Your custom plan</p>
+        <div class="summary-line"><span>Sport</span><strong id="summary-sport">Not selected</strong></div>
+        <div class="summary-line"><span>Training days</span><strong id="summary-days">0</strong></div>
+        <div class="summary-line"><span>Rate</span><strong>$15 / day</strong></div>
+        <div class="summary-line"><span>Regular price</span><strong id="summary-regular">$0.00</strong></div>
+        <div class="summary-discount">
+          <span>Package discount</span>
+          <strong id="summary-discount">0% off</strong>
+        </div>
+        <div class="summary-savings"><span>You save</span><strong id="summary-savings">$0.00</strong></div>
+        <div class="summary-total"><span>Estimated total</span><strong id="summary-total">$0.00</strong></div>
+        <a class="button custom-register-button disabled" id="custom-register-button" href="index.html#contact" aria-disabled="true">Continue to Registration</a>
+        <small>Payment is requested only after the academy confirms schedule and availability.</small>
+      </aside>
+    </section>
+
+    <section class="discount-rules">
+      <article><strong>1–50 days</strong><span>Standard flexible rate</span></article>
+      <article><strong>51–69 days</strong><span>5% package discount</span></article>
+      <article><strong>70–120 days</strong><span>10% package discount</span></article>
+      <article><strong>121–365 days</strong><span>15% package discount</span></article>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="index.html"><span class="logo-mark">P</span><span>Peak Sports Academy</span></a>
+    <p>Train hard. Grow strong. Play with purpose.</p>
+    <p>&copy; <span id="current-year"></span> Peak Sports Academy</p>
+  </footer>
+
+  <script src="custom-subscription.js"></script>
+</body>
+</html>
