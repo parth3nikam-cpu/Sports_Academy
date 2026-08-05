@@ -14,6 +14,7 @@ const starterEntries = [
   { question: 'What equipment is needed?', keywords: 'equipment gear kit', answer: 'Most beginners need comfortable sports clothing, suitable athletic shoes, and a water bottle. Specialist equipment depends on the sport, so ask us before buying expensive gear.' },
   { question: 'What are the academy timings?', keywords: 'schedule time weekend', answer: 'Timings vary by sport, age group, and season. Contact us with your preferred sport for the current schedule.' },
   { question: 'What is the fee?', keywords: 'fees cost price', answer: 'Fees vary by sport, program length, session frequency, and training level. Use the contact form for the current rate.' },
+  { question: 'What subscription plans are available?', keywords: 'subscription membership hourly monthly quarterly annual payment', answer: 'Peak offers hourly training for $15 per hour, monthly training for $350, quarterly training for $650, a six-month plan for $800, and an annual plan for $1,200.' },
   { question: 'How can I register?', keywords: 'join enroll sign up', answer: 'Complete the contact form with your details and preferred sport. Our team will contact you with schedule, fee, placement, and enrollment information.' }
 ];
 
@@ -37,6 +38,11 @@ function getCategory(entry) {
   return 'General';
 }
 
+function isSubscriptionQuestion(entry) {
+  const text = `${entry.question} ${entry.keywords}`.toLowerCase();
+  return /subscription|subscribe|membership|hourly|monthly|quarterly|six month|6 months|annual|yearly/.test(text);
+}
+
 function createFaqItem(entry, index) {
   const item = document.createElement('article');
   const answerId = `faq-answer-${index}`;
@@ -51,6 +57,13 @@ function createFaqItem(entry, index) {
   item.querySelector('.faq-answer p').textContent = entry.answer;
   const button = item.querySelector('.faq-question');
   const answer = item.querySelector('.faq-answer');
+  if (isSubscriptionQuestion(entry)) {
+    const subscriptionLink = document.createElement('a');
+    subscriptionLink.className = 'faq-subscription-link';
+    subscriptionLink.href = 'subscriptions.html';
+    subscriptionLink.textContent = 'View Subscriptions & Payment';
+    answer.appendChild(subscriptionLink);
+  }
   button.addEventListener('click', () => {
     const isOpen = button.getAttribute('aria-expanded') === 'true';
     button.setAttribute('aria-expanded', String(!isOpen));
