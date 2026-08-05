@@ -1,0 +1,187 @@
+# Peak Sports Academy - AI Coach Knowledge Base
+# Edit an answer below to update what the chatbot says.
+# Keep each entry separated by a line containing ---
+
+Q: What sports does the academy offer?
+Keywords: sports offered programs soccer basketball cricket tennis volleyball swimming track field badminton
+A: Peak Sports Academy supports soccer, basketball, cricket, tennis, volleyball, swimming, track and field, and badminton. Program availability can vary by season, so contact our team for the current schedule.
+---
+Q: Which sport suits an 8-year-old?
+Keywords: 8 year old child kid age choose sport beginner
+A: Soccer, basketball, swimming, tennis, and beginner cricket can all suit an 8-year-old. The best choice depends on whether the child enjoys team play, individual skill, water activities, or fast movement. We recommend an introductory session before choosing.
+---
+Q: What is the best sport for a beginner?
+Keywords: beginner first sport new starter easy choose
+A: There is no single best beginner sport. Soccer and basketball are great for teamwork, swimming develops confidence and fitness, and tennis or badminton build coordination. Choose the activity the athlete is excited to practice consistently.
+---
+Q: What age can children start?
+Keywords: minimum age start child young eligibility
+A: Starting ages depend on the sport and program. Young athletes usually begin with movement, coordination, and fun fundamentals before progressing to competitive training. Contact us with the child's age and preferred sport for the best placement.
+---
+Q: Do you offer programs for teenagers?
+Keywords: teenager teen youth high school older child
+A: Yes. Teen programs can focus on skill development, strength, speed, teamwork, and preparation for school or club competition. Placement depends on age, experience, and goals.
+---
+Q: Do you train adults?
+Keywords: adult grown up parents age limit
+A: Program availability for adults varies by sport and season. Send us your sport, experience level, and goals through the contact form, and our team will confirm current adult options.
+---
+Q: What equipment is needed?
+Keywords: equipment gear need bring wear kit
+A: Most beginners need comfortable sports clothing, suitable athletic shoes, and a water bottle. Specialist equipment depends on the sport. Please ask us before buying expensive gear because some starter programs may provide shared equipment.
+---
+Q: What equipment is needed for soccer?
+Keywords: soccer football equipment cleats shin guards ball
+A: Soccer athletes generally need athletic clothing, soccer cleats, shin guards, long socks, and a water bottle. The academy will confirm whether a personal ball is needed.
+---
+Q: What equipment is needed for basketball?
+Keywords: basketball equipment shoes ball jersey
+A: Basketball athletes generally need comfortable athletic clothing, supportive non-marking court shoes, and a water bottle. The academy normally provides training balls, but confirm before your first session.
+---
+Q: What equipment is needed for cricket?
+Keywords: cricket equipment bat pads gloves helmet protective
+A: Cricket may require a bat, pads, gloves, helmet, protective guard, athletic clothing, and suitable shoes. Ask the coach which items are provided before purchasing a complete kit.
+---
+Q: What equipment is needed for swimming?
+Keywords: swimming equipment swimsuit goggles cap towel
+A: Swimmers generally need a swimsuit, goggles, swim cap, towel, pool-safe footwear, and a water bottle. Coaches may recommend additional training aids later.
+---
+Q: What equipment is needed for tennis or badminton?
+Keywords: tennis badminton equipment racket racquet shoes shuttle
+A: Tennis and badminton athletes generally need athletic clothing, non-marking court shoes, a racket, and a water bottle. Beginner rackets may be available, so check with the academy before buying one.
+---
+Q: What are the academy timings?
+Keywords: academy timings time schedule hours open weekday weekend
+A: Timings vary by sport, age group, and season. Youth sessions are generally arranged after school on weekdays, with additional morning or afternoon sessions on weekends. Submit your preferred sport through the contact form for the current schedule.
+---
+Q: Are weekend classes available?
+Keywords: weekend saturday sunday classes sessions
+A: Weekend sessions may be available depending on the sport and season. Contact the academy with the athlete's age and sport to receive the current Saturday and Sunday options.
+---
+Q: How long is each training session?
+Keywords: session length duration how long class
+A: Session length depends on the athlete's age, sport, and training level. Younger beginner sessions are often shorter than performance sessions. The academy will confirm the exact duration during registration.
+---
+Q: How many days per week do athletes train?
+Keywords: days week frequency often training sessions
+A: Training frequency depends on the program. Beginners may attend once or twice weekly, while competitive athletes may train more often. Coaches recommend a schedule based on age, recovery, and goals.
+---
+Q: What is the fee?
+Keywords: fee fees cost price tuition payment rate
+A: Fees vary by sport, program length, session frequency, and training level. Use the contact form and select your sport; our team will provide the current rate and explain what is included.
+---
+Q: Is there a registration fee?
+Keywords: registration fee enrollment charge joining fee
+A: Registration charges can vary by program and season. The academy team will provide a complete fee breakdown before enrollment so you can review all costs.
+---
+Q: Do you offer a trial class?
+Keywords: trial demo first class try session
+A: Trial or introductory sessions may be available for selected programs. Contact us with the athlete's age and preferred sport, and we will confirm current trial options.
+---
+Q: Are discounts available for siblings?
+Keywords: discount sibling family multiple children offer
+A: Family, sibling, seasonal, or multi-program offers may be available. Ask the academy team for current promotions when registering.
+---
+Q: What payment methods do you accept?
+Keywords: payment methods card cash online installment pay
+A: Available payment methods and installment options are confirmed during registration. Please use the contact form to request the latest payment information.
+---
+Q: How can I register?
+Keywords: register registration enroll enrol join sign up apply
+A: Complete the contact form on this page with your name, email, mobile number, preferred sport, and a short message. Our team will contact you with schedule, fee, placement, and enrollment details.
+---
+Q: What information is needed to register?
+Keywords: registration information documents details required form
+A: Start with the athlete's name, age, contact details, preferred sport, experience level, and goals. The academy will tell you if any additional forms or documents are needed.
+---
+Q: Can I register more than one child?
+Keywords: register multiple children siblings two kids
+A: Yes. Mention each child's age, preferred sport, and experience level in the contact form message so the academy can recommend the right programs.
+---
+Q: Can I change sports after registering?
+Keywords: change switch transfer sport program
+A: Program changes may be possible when space is available. Speak with the academy team so they can recommend a suitable new group and explain any fee difference.
+---
+Q: Who are the coaches?
+Keywords: coaches trainers instructors qualifications certified experience
+A: Peak coaches are selected for sport knowledge, communication, and an athlete-first approach. Ask the academy for the coach profile and qualifications for your chosen program.
+---
+Q: How are athletes placed in groups?
+Keywords: group placement level assessment beginner advanced tryout
+A: Athletes are usually grouped using age, experience, skill level, goals, and available space. A coach may recommend an assessment or introductory session before final placement.
+---
+Q: Do you offer private coaching?
+Keywords: private coaching one to one personal individual lessons
+A: Private or small-group coaching may be available for selected sports. Contact us with your sport and goals to check coach availability and pricing.
+---
+Q: Do you offer competitive training?
+Keywords: competitive elite advanced performance tournament team
+A: Performance training is designed for athletes who want more focused development in skill, strength, speed, agility, and competition preparation. Coaches can assess whether it is the right level.
+---
+Q: Is the academy safe for children?
+Keywords: safety safe children supervision emergency first aid
+A: Athlete safety should always come first. Sessions are supervised, activities are matched to age and ability, and families should share medical or support needs before training. Contact the academy for current safety and emergency procedures.
+---
+Q: What should I do if my child has an injury?
+Keywords: injury injured pain medical doctor return training
+A: Stop training if an athlete has significant pain or injury and seek guidance from a qualified medical professional. Tell the coach before returning so activities can be adjusted. The chatbot cannot diagnose injuries.
+---
+Q: What if an athlete has a medical condition?
+Keywords: medical condition allergy asthma medication disability health
+A: Share relevant medical conditions, allergies, medications, accessibility needs, and emergency instructions with the academy before the first session. A healthcare professional should advise whether participation is appropriate.
+---
+Q: What should athletes eat before training?
+Keywords: food eat meal nutrition before training snack
+A: A light, familiar meal or snack before training may help, along with regular hydration. Avoid trying unfamiliar foods immediately before activity. For medical or specialized nutrition needs, consult a qualified healthcare or nutrition professional.
+---
+Q: What should athletes bring to class?
+Keywords: bring class checklist bottle clothes shoes towel
+A: Bring suitable sports clothing, correct footwear, a labeled water bottle, required protective equipment, and any sport-specific items confirmed by the coach. Arrive ready to train.
+---
+Q: How early should we arrive?
+Keywords: arrive early before session check in late
+A: Arriving about 10 to 15 minutes before the scheduled start usually allows time to check in, change, and prepare. Follow any specific arrival instructions provided by the academy.
+---
+Q: What happens if we miss a class?
+Keywords: miss absent makeup class cancellation attendance
+A: Makeup and cancellation rules depend on the program and available space. Notify the academy as early as possible and ask whether a makeup session or credit is available.
+---
+Q: Are parents allowed to watch?
+Keywords: parents watch viewing spectators stay session
+A: Parent viewing rules depend on the facility, sport, and session. Some programs have designated viewing areas or observation days. Confirm the policy before attending.
+---
+Q: Do you organize camps?
+Keywords: camp camps summer holiday clinic seasonal
+A: Peak may offer seasonal camps and focused clinics for skill development, teamwork, and fitness. Contact the academy for current camp dates, age groups, and availability.
+---
+Q: Do you organize tournaments or matches?
+Keywords: tournament tournaments games matches competition league
+A: Match and tournament opportunities depend on the sport, age group, and program level. Coaches will explain competition pathways to eligible athletes and families.
+---
+Q: Where is the academy located?
+Keywords: location address directions map parking facility
+A: Please contact the academy for the current training venue, directions, parking information, and the correct entrance for your sport.
+---
+Q: How can I contact the academy?
+Keywords: contact phone email message speak help support
+A: Use the contact form on this page to send your name, email, mobile number, sport, and message. The academy team will follow up with the information you need.
+---
+Q: Do you offer scholarships or financial assistance?
+Keywords: scholarship financial assistance aid support reduced fee
+A: Financial assistance or sponsored places may depend on available programs and funding. Contact the academy privately to ask about current options.
+---
+Q: What is the refund policy?
+Keywords: refund cancel withdrawal money policy
+A: Refund and withdrawal rules vary by program and enrollment period. Request the current written policy from the academy before making payment.
+---
+Q: Can beginners join after the season starts?
+Keywords: late join mid season beginner start now availability
+A: Late enrollment may be possible when a suitable group has space. Contact the academy with the athlete's age, sport, and experience level to check availability.
+---
+Q: Hello
+Keywords: hi hello hey good morning good afternoon
+A: Hi! I can help with sports, age groups, equipment, schedules, fees, coaching, safety, and registration. What would you like to know?
+---
+Q: Thank you
+Keywords: thanks thank you helpful
+A: You are welcome! If you need more help, ask another question or use the contact form to speak with the academy team.
