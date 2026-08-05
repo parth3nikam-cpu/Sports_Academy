@@ -85,6 +85,30 @@ h2 { margin-bottom: 18px; color: var(--navy); font-size: clamp(2.2rem, 4vw, 3.8r
 footer { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 34px 6vw; color: #aebbd2; background: var(--navy); font-size: .82rem; }
 footer p { margin: 0; }
 
+.coach-launcher { position: fixed; right: 24px; bottom: 24px; z-index: 30; display: flex; align-items: center; gap: 10px; padding: 10px 18px 10px 10px; color: var(--navy); background: var(--lime); border: 0; border-radius: 999px; box-shadow: 0 12px 35px rgba(11, 23, 54, .28); font: inherit; font-weight: 850; cursor: pointer; transition: transform 160ms ease; }
+.coach-launcher:hover { transform: translateY(-2px); }
+.coach-launcher-icon { display: grid; place-items: center; width: 38px; height: 38px; color: var(--white); background: var(--navy); border-radius: 50%; font-size: .72rem; }
+.coach-assistant { position: fixed; right: 24px; bottom: 88px; z-index: 30; display: none; grid-template-rows: auto minmax(0, 1fr) auto; width: min(390px, calc(100vw - 32px)); height: min(590px, calc(100vh - 120px)); overflow: hidden; background: var(--white); border: 1px solid rgba(11, 23, 54, .12); border-radius: 22px; box-shadow: 0 24px 70px rgba(11, 23, 54, .3); }
+.coach-assistant.open { display: grid; animation: coach-enter 180ms ease-out; }
+@keyframes coach-enter { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: none; } }
+.coach-header { display: flex; align-items: center; gap: 11px; padding: 17px; color: var(--white); background: var(--navy); }
+.coach-avatar { display: grid; place-items: center; width: 40px; height: 40px; flex: 0 0 auto; color: var(--navy); background: var(--lime); border-radius: 50% 50% 50% 12%; font-weight: 900; }
+.coach-header > div:nth-child(2) { display: flex; flex-direction: column; line-height: 1.25; }
+.coach-header span { color: #b8c4d9; font-size: .76rem; }
+.coach-header i { display: inline-block; width: 7px; height: 7px; margin-right: 4px; background: var(--lime); border-radius: 50%; }
+.coach-close { margin-left: auto; padding: 5px 8px; color: var(--white); background: transparent; border: 0; font-size: 1.7rem; line-height: 1; cursor: pointer; }
+.coach-messages { display: flex; flex-direction: column; gap: 12px; padding: 18px; overflow-y: auto; background: #f4f7fb; }
+.coach-message { max-width: 86%; padding: 11px 14px; border-radius: 16px; font-size: .9rem; line-height: 1.5; white-space: pre-line; }
+.assistant-message { align-self: flex-start; color: var(--text); background: var(--white); border-bottom-left-radius: 4px; box-shadow: 0 5px 18px rgba(11, 23, 54, .06); }
+.user-message { align-self: flex-end; color: var(--white); background: var(--blue); border-bottom-right-radius: 4px; }
+.coach-suggestions { display: flex; flex-wrap: wrap; gap: 7px; }
+.coach-suggestions button { padding: 8px 10px; color: var(--blue); background: var(--white); border: 1px solid #cbd5e1; border-radius: 999px; font: inherit; font-size: .74rem; font-weight: 700; cursor: pointer; }
+.coach-suggestions button:hover { border-color: var(--blue); }
+.coach-input-form { display: flex; gap: 8px; padding: 13px; background: var(--white); border-top: 1px solid #e3e8f0; }
+.coach-input-form input { min-width: 0; flex: 1; padding: 11px 13px; border: 1px solid #cfd7e4; border-radius: 999px; font: inherit; outline: none; }
+.coach-input-form input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(21, 59, 142, .1); }
+.coach-input-form button { padding: 9px 15px; color: var(--navy); background: var(--lime); border: 0; border-radius: 999px; font: inherit; font-size: .82rem; font-weight: 850; cursor: pointer; }
+
 @media (max-width: 820px) {
   .menu-toggle { display: block; }
   .main-nav { position: absolute; top: 76px; left: 0; right: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 12px 6vw 24px; background: var(--navy); }
@@ -111,4 +135,6 @@ footer p { margin: 0; }
   .visual-card { right: 14px; }
   .form-row { grid-template-columns: 1fr; }
   .form-submit { width: 100%; }
+  .coach-launcher { right: 16px; bottom: 16px; }
+  .coach-assistant { right: 16px; bottom: 78px; height: min(570px, calc(100vh - 100px)); }
 }
