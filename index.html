@@ -61,24 +61,44 @@
         <p>From first fundamentals to elite performance, every program combines smart training with a positive team culture.</p>
       </div>
       <div class="program-grid">
-        <article class="program-card">
-          <span class="card-number">01</span>
+        <article class="program-card" data-program="Youth Development" data-summary="A positive introduction to sport through movement, fundamentals, and confidence-building coaching.">
+          <div class="program-card-top">
+            <span class="card-number">01</span>
+            <span class="program-mark" aria-hidden="true">YD</span>
+          </div>
           <h3>Youth Development</h3>
           <p>Fun, age-appropriate coaching that builds strong fundamentals and a lifelong love of sport.</p>
-          <a href="#contact">Learn more <span aria-hidden="true">→</span></a>
+          <div class="program-facts" aria-label="Program details"><span>Ages 6–12</span><span>All levels</span></div>
+          <button class="program-select" type="button" aria-pressed="false">Choose program <span aria-hidden="true">&rarr;</span></button>
         </article>
-        <article class="program-card featured">
-          <span class="card-number">02</span>
+        <article class="program-card is-selected" data-program="Performance Training" data-summary="Focused coaching for athletes ready to improve their strength, speed, agility, and competitive edge.">
+          <div class="program-card-top">
+            <span class="card-number">02</span>
+            <span class="program-mark" aria-hidden="true">PT</span>
+          </div>
           <h3>Performance Training</h3>
           <p>Focused strength, speed, agility, and sport-specific training for competitive athletes.</p>
-          <a href="#contact">Learn more <span aria-hidden="true">→</span></a>
+          <div class="program-facts" aria-label="Program details"><span>Ages 12+</span><span>Competitive</span></div>
+          <button class="program-select" type="button" aria-pressed="true">Selected <span aria-hidden="true">&#10003;</span></button>
         </article>
-        <article class="program-card">
-          <span class="card-number">03</span>
+        <article class="program-card" data-program="Team Camps" data-summary="High-energy group sessions that sharpen skills, strengthen communication, and bring teams together.">
+          <div class="program-card-top">
+            <span class="card-number">03</span>
+            <span class="program-mark" aria-hidden="true">TC</span>
+          </div>
           <h3>Team Camps</h3>
           <p>High-energy camps designed to sharpen skills, strengthen teamwork, and build confidence.</p>
-          <a href="#contact">Learn more <span aria-hidden="true">→</span></a>
+          <div class="program-facts" aria-label="Program details"><span>Teams</span><span>Seasonal</span></div>
+          <button class="program-select" type="button" aria-pressed="false">Choose program <span aria-hidden="true">&rarr;</span></button>
         </article>
+      </div>
+      <div class="program-selection" id="program-selection" aria-live="polite">
+        <div>
+          <span class="selection-label">Your selected program</span>
+          <strong id="selected-program-name">Performance Training</strong>
+          <p id="selected-program-summary">Focused coaching for athletes ready to improve their strength, speed, agility, and competitive edge.</p>
+        </div>
+        <a class="button button-primary" id="selected-program-action" href="#contact">Ask about this program <span aria-hidden="true">&rarr;</span></a>
       </div>
     </section>
 
