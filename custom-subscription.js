@@ -3,12 +3,24 @@ const navigation = document.querySelector('.main-nav');
 const daysSelect = document.querySelector('#training-days');
 const sportSelect = document.querySelector('#custom-sport');
 const registrationButton = document.querySelector('#custom-register-button');
+const discountBannerImage = document.querySelector('#discount-banner-image');
+const discountBannerFallback = document.querySelector('#discount-banner-fallback');
 const dailyRate = 15;
 
 menuButton.addEventListener('click', () => {
   const isOpen = navigation.classList.toggle('open');
   menuButton.setAttribute('aria-expanded', String(isOpen));
 });
+
+function showDiscountFallback() {
+  discountBannerImage.hidden = true;
+  discountBannerFallback.hidden = false;
+}
+
+discountBannerImage.addEventListener('error', showDiscountFallback);
+if (discountBannerImage.complete && discountBannerImage.naturalWidth === 0) {
+  showDiscountFallback();
+}
 
 for (let day = 1; day <= 365; day += 1) {
   const option = document.createElement('option');
