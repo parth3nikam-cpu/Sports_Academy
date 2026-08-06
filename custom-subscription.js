@@ -1,6 +1,7 @@
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.main-nav');
-const daysSelect = document.querySelector('#training-days');
+const daysSlider = document.querySelector('#training-days');
+const daysValue = document.querySelector('#training-days-value');
 const sportSelect = document.querySelector('#custom-sport');
 const registrationButton = document.querySelector('#custom-register-button');
 const discountBannerImage = document.querySelector('#discount-banner-image');
@@ -22,13 +23,6 @@ if (discountBannerImage.complete && discountBannerImage.naturalWidth === 0) {
   showDiscountFallback();
 }
 
-for (let day = 1; day <= 365; day += 1) {
-  const option = document.createElement('option');
-  option.value = String(day);
-  option.textContent = `${day} ${day === 1 ? 'day' : 'days'}`;
-  daysSelect.appendChild(option);
-}
-
 function getDiscount(days) {
   if (days >= 121) return 0.15;
   if (days >= 70) return 0.10;
@@ -41,13 +35,14 @@ function formatMoney(amount) {
 }
 
 function updatePlanSummary() {
-  const days = Number(daysSelect.value) || 0;
+  const days = Number(daysSlider.value);
   const sport = sportSelect.value;
   const regularPrice = days * dailyRate;
   const discount = getDiscount(days);
   const savings = regularPrice * discount;
   const total = regularPrice - savings;
 
+  daysValue.textContent = `${days} ${days === 1 ? 'day' : 'days'}`;
   document.querySelector('#summary-sport').textContent = sport || 'Not selected';
   document.querySelector('#summary-days').textContent = String(days);
   document.querySelector('#summary-regular').textContent = formatMoney(regularPrice);
@@ -67,7 +62,7 @@ function updatePlanSummary() {
   }
 }
 
-daysSelect.addEventListener('change', updatePlanSummary);
+daysSlider.addEventListener('input', updatePlanSummary);
 sportSelect.addEventListener('change', updatePlanSummary);
 
 registrationButton.addEventListener('click', (event) => {
@@ -75,3 +70,4 @@ registrationButton.addEventListener('click', (event) => {
 });
 
 document.querySelector('#current-year').textContent = new Date().getFullYear();
+updatePlanSummary();
