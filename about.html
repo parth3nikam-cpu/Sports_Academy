@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Meet the founder and discover the purpose, values, and athlete-first approach behind Peak Sports Academy.">
-  <title>About Me | Peak Sports Academy</title>
+  <meta name="description" content="Peak Sports Academy helps athletes build skills, confidence, and character.">
+  <title>Peak Sports Academy</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="about-page">
+<body>
   <header class="site-header">
-    <a class="logo" href="index.html" aria-label="Peak Sports Academy home">
+    <a class="logo" href="#home" aria-label="Peak Sports Academy home">
       <span class="logo-mark">P</span>
       <span>Peak Sports Academy</span>
     </a>
@@ -18,170 +18,212 @@
       <span></span><span></span><span></span>
     </button>
     <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
-      <a href="index.html#programs">Programs</a>
-      <a href="about.html" aria-current="page">About Me</a>
+      <a href="#programs">Programs</a>
+      <a href="about.html">About Me</a>
       <a href="how-we-work.html">How We Work</a>
+      <a href="#coaches">Coaches</a>
       <a href="faq.html">FAQ</a>
       <a href="subscriptions.html">Subscriptions</a>
       <a href="custom-subscription.html">Build a Plan</a>
-      <a class="nav-cta" href="index.html#contact">Contact Us</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Join the Academy</a>
     </nav>
   </header>
 
   <main>
-    <section class="about-me-hero">
-      <div class="about-me-copy">
-        <p class="eyebrow">The person behind Peak</p>
-        <h1>Hi, I’m the founder of <span>Peak Sports Academy.</span></h1>
-        <p>I created this academy to give athletes a place where they can learn with confidence, work toward meaningful goals, and grow as people—not only as players.</p>
-        <div class="about-top-actions" aria-label="Academy actions">
-          <a class="button button-primary" href="custom-subscription.html">Build a Plan</a>
-          <a class="button button-secondary" href="subscriptions.html">See Subscriptions</a>
-          <a class="button button-secondary" href="index.html#contact">Contact Us</a>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">Train with purpose. Compete with confidence.</p>
+        <h1>Build the athlete.<br><span>Shape the future.</span></h1>
+        <p class="hero-copy">Expert coaching, supportive teams, and proven programs for athletes of every level.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#programs">Explore Programs</a>
+          <a class="button button-secondary" href="#about">Discover Our Approach</a>
+        </div>
+        <div class="hero-stats" aria-label="Academy highlights">
+          <div><strong>12+</strong><span>Programs</span></div>
+          <div><strong>30</strong><span>Expert Coaches</span></div>
+          <div><strong>500+</strong><span>Active Athletes</span></div>
         </div>
       </div>
-      <div class="founder-card" aria-label="Peak Sports Academy founder">
-        <div class="founder-avatar-frame">
-          <img class="founder-avatar" id="founder-avatar" src="about-founder-photo.png" width="1254" height="1254" loading="eager" decoding="async" alt="AI-styled male founder avatar">
-          <div class="founder-monogram" id="founder-monogram" aria-hidden="true" hidden>P</div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-card">
+          <span>Next session</span>
+          <strong>Summer Training Camp</strong>
+          <small>Registration now open</small>
         </div>
-        <span>Founder &amp; Academy Director</span>
-        <strong>Building confident athletes</strong>
-        <p>Purpose-led coaching. Positive development. A community where every athlete can belong.</p>
       </div>
     </section>
 
-    <section class="founder-story section" id="my-story">
-      <div class="story-heading">
-        <p class="eyebrow">Why I started Peak</p>
-        <h2>Every athlete deserves the chance to discover what they can become.</h2>
+    <section class="section" id="programs">
+      <div class="section-heading">
+        <p class="eyebrow">Find your game</p>
+        <h2>Programs built for progress</h2>
+        <p>From first fundamentals to elite performance, every program combines smart training with a positive team culture.</p>
       </div>
-      <div class="story-body">
-        <p>I started Peak Sports Academy with a simple belief: great coaching should build more than physical skill. It should help athletes become disciplined, resilient, confident, and ready to support the people around them.</p>
-        <p>My goal is to create an environment where beginners feel welcome, experienced athletes stay challenged, and families understand the path ahead. Every program is designed to meet athletes where they are and help them take a clear next step.</p>
-        <p>Sport can teach lessons that stay with us long after a practice or competition ends. It teaches us how to prepare, how to respond when something is difficult, how to work with others, and how to keep improving even when progress feels slow. Those lessons are at the heart of what I want Peak to offer.</p>
-        <p>I also believe athletes perform at their best when they feel supported. That means creating a culture where questions are welcome, mistakes are treated as opportunities to learn, and effort is recognized. Athletes should be challenged, but they should also know that their value is not determined by one result, one game, or one difficult day.</p>
-        <blockquote>“Progress looks different for every athlete. Our job is to help each person find it, earn it, and feel proud of it.”</blockquote>
+      <div class="program-grid">
+        <article class="program-card" data-program="Youth Development" data-summary="A positive introduction to sport through movement, fundamentals, and confidence-building coaching.">
+          <div class="program-card-top">
+            <span class="card-number">01</span>
+            <span class="program-mark" aria-hidden="true">YD</span>
+          </div>
+          <h3>Youth Development</h3>
+          <p>Fun, age-appropriate coaching that builds strong fundamentals and a lifelong love of sport.</p>
+          <div class="program-facts" aria-label="Program details"><span>Ages 6–12</span><span>All levels</span></div>
+          <button class="program-select" type="button" aria-pressed="false">Choose program <span aria-hidden="true">&rarr;</span></button>
+        </article>
+        <article class="program-card is-selected" data-program="Performance Training" data-summary="Focused coaching for athletes ready to improve their strength, speed, agility, and competitive edge.">
+          <div class="program-card-top">
+            <span class="card-number">02</span>
+            <span class="program-mark" aria-hidden="true">PT</span>
+          </div>
+          <h3>Performance Training</h3>
+          <p>Focused strength, speed, agility, and sport-specific training for competitive athletes.</p>
+          <div class="program-facts" aria-label="Program details"><span>Ages 12+</span><span>Competitive</span></div>
+          <button class="program-select" type="button" aria-pressed="true">Selected <span aria-hidden="true">&#10003;</span></button>
+        </article>
+        <article class="program-card" data-program="Team Camps" data-summary="High-energy group sessions that sharpen skills, strengthen communication, and bring teams together.">
+          <div class="program-card-top">
+            <span class="card-number">03</span>
+            <span class="program-mark" aria-hidden="true">TC</span>
+          </div>
+          <h3>Team Camps</h3>
+          <p>High-energy camps designed to sharpen skills, strengthen teamwork, and build confidence.</p>
+          <div class="program-facts" aria-label="Program details"><span>Teams</span><span>Seasonal</span></div>
+          <button class="program-select" type="button" aria-pressed="false">Choose program <span aria-hidden="true">&rarr;</span></button>
+        </article>
       </div>
-    </section>
-
-    <section class="founder-vision section">
-      <div class="founder-vision-intro">
-        <p class="eyebrow">What Peak means to me</p>
-        <h2>More than a place to practice</h2>
-        <p>Peak is meant to be a place where athletes feel excited to arrive, ready to work, and proud of the person they are becoming. The academy is built around a long-term view of development rather than pressure for instant results.</p>
-      </div>
-      <div class="founder-vision-grid">
-        <article>
-          <h3>A place to begin</h3>
-          <p>Trying a new sport can feel intimidating. We want beginners to receive patient instruction, clear expectations, and enough encouragement to keep coming back. The first goal is not perfection; it is helping athletes feel comfortable learning.</p>
-        </article>
-        <article>
-          <h3>A place to improve</h3>
-          <p>Development happens through consistent effort. We help athletes understand what they are working on, why it matters, and what progress looks like. Small improvements become strong habits when they are practiced with purpose.</p>
-        </article>
-        <article>
-          <h3>A place to belong</h3>
-          <p>Sports are stronger when athletes feel connected to their coaches and teammates. We aim to create a respectful environment where different personalities, backgrounds, abilities, and ambitions can be part of one community.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="academy-story section">
-      <div class="academy-story-intro">
-        <p class="eyebrow">About the academy</p>
-        <h2>Training the whole athlete</h2>
-        <p>Peak Sports Academy is a supportive training community for athletes at different ages and experience levels. We combine sport-specific development with habits that matter everywhere: preparation, teamwork, leadership, consistency, and respect.</p>
-      </div>
-      <div class="academy-principles">
-        <article>
-          <span>01</span>
-          <h3>Athlete first</h3>
-          <p>Training begins with the athlete’s age, ability, goals, confidence, and well-being.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Progress with purpose</h3>
-          <p>Clear instruction and achievable challenges turn effort into steady, visible growth.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Character matters</h3>
-          <p>Respect, resilience, discipline, and teamwork are part of every meaningful victory.</p>
-        </article>
-        <article>
-          <span>04</span>
-          <h3>Everyone belongs</h3>
-          <p>We aim to build an inclusive community where athletes and families feel supported.</p>
-        </article>
+      <div class="program-selection" id="program-selection" aria-live="polite">
+        <div>
+          <span class="selection-label">Your selected program</span>
+          <strong id="selected-program-name">Performance Training</strong>
+          <p id="selected-program-summary">Focused coaching for athletes ready to improve their strength, speed, agility, and competitive edge.</p>
+        </div>
+        <a class="button button-primary" id="selected-program-action" href="#contact">Ask about this program <span aria-hidden="true">&rarr;</span></a>
       </div>
     </section>
 
-    <section class="about-approach section">
+    <section class="about section" id="about">
       <div>
-        <p class="eyebrow">Our approach</p>
-        <h2>A clear path from first session to next goal</h2>
+        <p class="eyebrow">More than training</p>
+        <h2>Champions on the field and beyond it</h2>
       </div>
-      <ol class="approach-steps">
-        <li><strong>Listen</strong><span>We learn about the athlete’s interests, experience, and goals.</span></li>
-        <li><strong>Guide</strong><span>We recommend a sport, program, and training schedule that fits.</span></li>
-        <li><strong>Develop</strong><span>Coaches build skills through focused practice, feedback, and encouragement.</span></li>
-        <li><strong>Review</strong><span>We recognize progress, discuss new challenges, and adjust the plan as the athlete develops.</span></li>
-      </ol>
-    </section>
-
-    <section class="athlete-experience section">
-      <div class="athlete-experience-heading">
-        <p class="eyebrow">The Peak experience</p>
-        <h2>What athletes can expect from us</h2>
-        <p>Every athlete enters with a different story. Some are discovering a sport for the first time. Others are preparing for a team, competition, or personal milestone. Our responsibility is to provide a thoughtful environment where each athlete can move forward.</p>
-      </div>
-      <div class="experience-list">
-        <article><span>01</span><div><h3>Clear coaching</h3><p>Instructions should be understandable, practical, and connected to a specific purpose. Athletes should know what they are learning and how to practice it.</p></div></article>
-        <article><span>02</span><div><h3>Positive challenge</h3><p>Training should stretch an athlete without taking away confidence. We balance encouragement with honest feedback and age-appropriate expectations.</p></div></article>
-        <article><span>03</span><div><h3>Consistent standards</h3><p>Respect, preparation, effort, and teamwork matter in every session. Consistent standards create trust and help athletes take ownership of their progress.</p></div></article>
-        <article><span>04</span><div><h3>Room to grow</h3><p>No athlete is expected to know everything on day one. We create space for questions, repetition, mistakes, reflection, and the confidence that follows improvement.</p></div></article>
-      </div>
-    </section>
-
-    <section class="family-partnership section">
       <div>
-        <p class="eyebrow">Working with families</p>
-        <h2>Development works best when everyone understands the goal</h2>
-      </div>
-      <div class="family-partnership-copy">
-        <p>Families are an important part of an athlete’s experience. We want parents and guardians to understand program expectations, schedules, progress, and the next steps available to their athlete.</p>
-        <p>Good communication helps athletes succeed. We encourage families to share relevant goals, questions, medical considerations, accessibility needs, and concerns with the academy. In return, we aim to communicate clearly and treat every conversation with respect.</p>
-        <p>Our role is to coach and guide. A family’s role is not to demand perfection, but to support preparation, consistency, healthy recovery, and a positive relationship with sport. When coaches, athletes, and families work together, development becomes more sustainable and enjoyable.</p>
-      </div>
-    </section>
-
-    <section class="academy-future section">
-      <div class="academy-future-copy">
-        <p class="eyebrow">Looking ahead</p>
-        <h2>Building an academy that keeps getting better</h2>
-        <p>My vision for Peak is to continue growing thoughtfully: offering athletes more ways to participate, helping coaches deliver meaningful experiences, and making it easier for families to find the right program.</p>
-        <p>As the academy develops, the purpose will remain the same. We will keep focusing on people, progress, and the positive role sport can play in a young person’s life. Success will be measured not only by results, but also by the confidence, habits, friendships, and memories athletes carry forward.</p>
-      </div>
-      <div class="future-statement">
-        <span>Our direction</span>
-        <strong>Grow with purpose. Lead with care. Keep athletes at the center.</strong>
+        <p>At Peak, we coach the whole athlete. Our experienced team creates a safe, ambitious environment where discipline, resilience, leadership, and joy grow alongside athletic ability.</p>
+        <ul class="check-list">
+          <li>Certified, athlete-first coaches</li>
+          <li>Personal development plans</li>
+          <li>Inclusive and supportive community</li>
+        </ul>
       </div>
     </section>
 
-    <section class="founder-promise">
-      <p class="eyebrow">My promise to families</p>
-      <h2>A place to train hard, grow strong, and enjoy the journey.</h2>
-      <p>I want every family to feel informed and every athlete to feel seen. We will keep working to make Peak a place where effort is valued, improvement is celebrated, and sport becomes a positive part of life.</p>
+    <section class="coaches section" id="coaches">
+      <div class="section-heading">
+        <p class="eyebrow">Great people. Great coaching.</p>
+        <h2>Learn from leaders</h2>
+        <p>Our coaches bring competitive experience, professional qualifications, and a shared commitment to every athlete.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-intro">
+        <p class="eyebrow">Your next chapter starts here</p>
+        <h2>Ready to raise your game?</h2>
+        <p>Share a few details and our academy team will help you find the right sport and training program.</p>
+        <div class="contact-note">
+          <strong>What happens next?</strong>
+          <span>Our team will review your message and get in touch to discuss your goals.</span>
+        </div>
+      </div>
+
+      <form class="contact-form" id="academy-contact-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="mobile">Mobile</label>
+            <input id="mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel" placeholder="Your phone number" required>
+          </div>
+          <div class="form-field">
+            <label for="sport">Sport</label>
+            <select id="sport" name="sport" required>
+              <option value="" selected disabled>Select a sport</option>
+              <option value="soccer">Soccer</option>
+              <option value="basketball">Basketball</option>
+              <option value="cricket">Cricket</option>
+              <option value="tennis">Tennis</option>
+              <option value="volleyball">Volleyball</option>
+              <option value="swimming">Swimming</option>
+              <option value="track-and-field">Track &amp; Field</option>
+              <option value="badminton">Badminton</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your goals, experience level, or any questions you have." required></textarea>
+        </div>
+
+        <button class="button form-submit" type="submit">Send Message</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
   <footer>
-    <a class="logo" href="index.html"><span class="logo-mark">P</span><span>Peak Sports Academy</span></a>
+    <a class="logo" href="#home"><span class="logo-mark">P</span><span>Peak Sports Academy</span></a>
     <p>Train hard. Grow strong. Play with purpose.</p>
     <p>&copy; <span id="current-year"></span> Peak Sports Academy</p>
   </footer>
 
-  <script src="about.js"></script>
+  <button class="coach-launcher" id="coach-launcher" type="button" aria-expanded="false" aria-controls="coach-assistant">
+    <span class="coach-launcher-icon" aria-hidden="true">AI</span>
+    <span>Ask Coach</span>
+  </button>
+
+  <aside class="coach-assistant" id="coach-assistant" aria-label="AI Coach Assistant" aria-hidden="true">
+    <header class="coach-header">
+      <div class="coach-avatar" aria-hidden="true">P</div>
+      <div>
+        <strong>Peak AI Coach</strong>
+        <span><i aria-hidden="true"></i> Online now</span>
+      </div>
+      <button class="coach-close" id="coach-close" type="button" aria-label="Close AI Coach">&times;</button>
+    </header>
+
+    <div class="coach-messages" id="coach-messages" aria-live="polite">
+      <div class="coach-message assistant-message">
+        Hi! I am your Peak AI Coach. Ask me about choosing a sport, equipment, academy timings, fees, or registration.
+      </div>
+      <div class="coach-suggestions" aria-label="Suggested questions">
+        <button type="button" data-question="Which sport suits an 8-year-old?">Sport for an 8-year-old</button>
+        <button type="button" data-question="What equipment is needed?">Equipment needed</button>
+        <button type="button" data-question="What are the academy timings?">Academy timings</button>
+        <button type="button" data-question="What is the fee?">Fees</button>
+        <button type="button" data-question="How can I register?">How to register</button>
+      </div>
+    </div>
+
+    <form class="coach-input-form" id="coach-input-form">
+      <label class="sr-only" for="coach-input">Ask the AI Coach a question</label>
+      <input id="coach-input" name="question" type="text" autocomplete="off" placeholder="Ask your coach..." required>
+      <button type="submit" aria-label="Send question">Send</button>
+    </form>
+  </aside>
+
+  <script src="script.js"></script>
+  <script src="interactions.js"></script>
 </body>
 </html>
