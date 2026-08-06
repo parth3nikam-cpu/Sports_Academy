@@ -187,8 +187,15 @@ footer p { margin: 0; }
 .custom-hero-stat strong { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1; }
 .custom-hero-stat span { font-weight: 700; }
 .discount-banner-section { padding: 90px 6vw; }
-.discount-banner-picture { display: block; width: min(1200px, 100%); margin: 0 auto; }
+.discount-banner-frame { width: min(1200px, 100%); margin: 0 auto; }
+.discount-banner-picture { display: block; width: 100%; }
 .discount-banner-image { display: block; width: 100%; height: auto; object-fit: contain; border-radius: var(--radius); box-shadow: var(--shadow); }
+.discount-banner-fallback { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; min-height: 390px; padding: 2px; overflow: hidden; color: var(--white); background: var(--lime); border-radius: var(--radius); box-shadow: var(--shadow); }
+.discount-banner-fallback[hidden] { display: none; }
+.discount-banner-fallback article { display: grid; place-content: center; gap: 22px; padding: 35px 20px; text-align: center; background: radial-gradient(circle at 50% 20%, #173f91, var(--navy) 70%); }
+.discount-banner-fallback strong { color: var(--lime); font-size: clamp(3.5rem, 8vw, 7rem); line-height: .8; letter-spacing: -.07em; text-shadow: 0 5px 0 #07102a; }
+.discount-banner-fallback strong span { display: block; margin-top: 16px; color: var(--white); font-size: .38em; letter-spacing: -.03em; }
+.discount-banner-fallback small { padding: 10px 14px; color: var(--navy); background: var(--lime); border-radius: 8px; font-size: clamp(.85rem, 1.5vw, 1.25rem); font-weight: 900; }
 .plan-builder { display: grid; grid-template-columns: 1fr .8fr; align-items: start; gap: clamp(40px, 8vw, 110px); padding: 95px 8vw; background: var(--white); }
 .builder-intro { color: var(--muted); }
 .builder-form-panel form { display: grid; gap: 22px; margin-top: 35px; }
@@ -260,4 +267,6 @@ footer p { margin: 0; }
   .pricing-grid { grid-template-columns: 1fr; }
   .custom-plan-hero, .discount-banner-section, .plan-builder, .custom-plan-cta { padding-left: 22px; padding-right: 22px; }
   .discount-rules { grid-template-columns: 1fr; }
+  .discount-banner-fallback { grid-template-columns: 1fr; }
+  .discount-banner-fallback article { min-height: 240px; }
 }
