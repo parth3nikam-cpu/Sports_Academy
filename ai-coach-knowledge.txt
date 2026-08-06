@@ -253,3 +253,11 @@ A: Custom plans receive 5% off for 51 to 69 days, 10% off for 70 to 120 days, an
 Q: How much does a custom training plan cost?
 Keywords: custom training plan price cost rate calculate 15 day hour
 A: Custom plans use one one-hour training session per selected day at $15 per day before discounts. Choose 1 to 365 days on the Build a Plan page to see the regular price, savings, and estimated total.
+---
+Q: Who is the founder of Peak Sports Academy?
+Keywords: founder owner about me person behind academy director started peak
+A: Peak Sports Academy was created by a founder who believes coaching should build skill, confidence, discipline, resilience, and character. Visit the About Me page to read the founder's personal message and vision for the academy.
+---
+Q: What is Peak Sports Academy about?
+Keywords: academy about mission purpose values story approach
+A: Peak Sports Academy is an athlete-first training community focused on sport-specific development, confidence, teamwork, leadership, consistency, and respect. Visit the About Me page to learn more about the academy's purpose and approach.
