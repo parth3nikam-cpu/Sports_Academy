@@ -66,14 +66,6 @@
 
         <form id="custom-plan-form">
           <div class="builder-field">
-            <label for="training-days">How many training days?</label>
-            <select id="training-days" name="days" required>
-              <option value="" selected disabled>Select 1 to 365 days</option>
-            </select>
-            <small>Choose the total number of one-hour training days.</small>
-          </div>
-
-          <div class="builder-field">
             <label for="custom-sport">Which sport?</label>
             <select id="custom-sport" name="sport" required>
               <option value="" selected disabled>Select a sport</option>
@@ -87,6 +79,16 @@
               <option value="Badminton">Badminton</option>
             </select>
             <small>Sport availability is confirmed during registration.</small>
+          </div>
+
+          <div class="builder-field training-days-field">
+            <div class="range-label-row">
+              <label for="training-days">How many training days?</label>
+              <output id="training-days-value" for="training-days" aria-live="polite">1 day</output>
+            </div>
+            <input id="training-days" name="days" type="range" min="1" max="365" value="1" step="1" required>
+            <div class="range-scale" aria-hidden="true"><span>1 day</span><span>365 days</span></div>
+            <small>Slide to choose the total number of one-hour training days.</small>
           </div>
         </form>
       </div>
