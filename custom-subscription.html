@@ -1,321 +1,179 @@
-const menuButton = document.querySelector('.menu-toggle');
-const navigation = document.querySelector('.main-nav');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build a custom Peak Sports Academy subscription by choosing your sport and training days.">
+  <title>Build Your Subscription | Peak Sports Academy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="custom-plan-page">
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Peak Sports Academy home">
+      <span class="logo-mark">P</span>
+      <span>Peak Sports Academy</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+      <span class="sr-only">Toggle navigation</span>
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+      <a href="index.html#programs">Programs</a>
+      <a href="about.html">About Me</a>
+      <a href="faq.html">FAQ</a>
+      <a href="subscriptions.html">Subscriptions</a>
+      <a href="custom-subscription.html" aria-current="page">Build a Plan</a>
+      <a class="nav-cta" href="index.html#contact">Contact Us</a>
+    </nav>
+  </header>
 
-menuButton.addEventListener('click', () => {
-  const isOpen = navigation.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(isOpen));
-});
+  <main>
+    <section class="custom-plan-hero">
+      <div>
+        <p class="eyebrow">Your sport. Your schedule.</p>
+        <h1>Build your own<br><span>training plan.</span></h1>
+        <p>Choose a sport, 1 to 24 hours per day, and any number of training days from 1 to 365. Your package discount is calculated automatically.</p>
+      </div>
+      <div class="custom-hero-stat" aria-label="Custom plan benefit">
+        <strong>Up to 15% off</strong>
+        <span>Longer training packages reward your commitment.</span>
+      </div>
+    </section>
 
-navigation.addEventListener('click', (event) => {
-  if (event.target.matches('a')) {
-    navigation.classList.remove('open');
-    menuButton.setAttribute('aria-expanded', 'false');
-  }
-});
+    <section class="discount-banner-section" aria-labelledby="discount-heading">
+      <div class="section-heading pricing-heading">
+        <p class="eyebrow">Train more. Save more.</p>
+        <h2 id="discount-heading">Automatic package discounts</h2>
+        <p>Discounts are applied instantly based on the number of training days you choose.</p>
+      </div>
+      <div class="discount-banner-frame">
+        <picture class="discount-banner-picture">
+          <img class="discount-banner-image" id="discount-banner-image" src="custom-plan-discounts.png" width="1824" height="864" loading="eager" decoding="async" alt="5% off for 51 to 69 days, 10% off for 70 to 120 days, and 15% off for 121 or more days">
+        </picture>
+        <div class="discount-banner-fallback" id="discount-banner-fallback" hidden aria-label="Custom plan discount offers">
+          <article><strong>5%<span>OFF</span></strong><small>51&ndash;69 DAYS</small></article>
+          <article><strong>10%<span>OFF</span></strong><small>70&ndash;120 DAYS</small></article>
+          <article><strong>15%<span>OFF</span></strong><small>121+ DAYS</small></article>
+        </div>
+      </div>
+    </section>
 
-const navigationLinks = [...navigation.querySelectorAll('a')];
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    <section class="plan-builder" id="plan-builder" aria-labelledby="builder-heading">
+      <div class="builder-form-panel">
+        <p class="eyebrow">Customize your subscription</p>
+        <h2 id="builder-heading">Create your plan</h2>
+        <p class="builder-intro">Choose your sport, daily training hours, and number of training days. Pricing uses the flexible rate of $15 per hour.</p>
 
-navigationLinks.forEach((link) => {
-  link.addEventListener('pointermove', (event) => {
-    if (event.pointerType !== 'mouse' || reducedMotion.matches) return;
-    const bounds = link.getBoundingClientRect();
-    link.style.setProperty('--nav-x', `${(event.clientX - bounds.left - (bounds.width / 2)) * 0.1}px`);
-    link.style.setProperty('--nav-y', `${(event.clientY - bounds.top - (bounds.height / 2)) * 0.13}px`);
-  });
+        <form id="custom-plan-form">
+          <div class="builder-field">
+            <label for="custom-sport">Which sport?</label>
+            <select id="custom-sport" name="sport" required>
+              <option value="" selected disabled>Select a sport</option>
+              <option value="Soccer">Soccer</option>
+              <option value="Basketball">Basketball</option>
+              <option value="Cricket">Cricket</option>
+              <option value="Tennis">Tennis</option>
+              <option value="Volleyball">Volleyball</option>
+              <option value="Swimming">Swimming</option>
+              <option value="Track &amp; Field">Track &amp; Field</option>
+              <option value="Badminton">Badminton</option>
+            </select>
+            <small>Sport availability is confirmed during registration.</small>
+          </div>
 
-  link.addEventListener('pointerleave', () => {
-    link.style.setProperty('--nav-x', '0px');
-    link.style.setProperty('--nav-y', '0px');
-  });
+          <div class="builder-field range-field hours-per-day-field">
+            <div class="range-label-row">
+              <label for="hours-per-day">How many hours per day?</label>
+              <output id="hours-per-day-value" for="hours-per-day" aria-live="polite">1 hour</output>
+            </div>
+            <input id="hours-per-day" name="hours" type="range" min="1" max="24" value="1" step="1" required>
+            <div class="range-scale" aria-hidden="true"><span>1 hour</span><span>24 hours</span></div>
+            <small>Our schedule is open 24 hours. Slide to choose 1 to 24 training hours per day.</small>
+          </div>
 
-  link.addEventListener('pointerdown', (event) => {
-    if (reducedMotion.matches) return;
-    const oldRipple = link.querySelector('.nav-ripple');
-    if (oldRipple) oldRipple.remove();
-    const bounds = link.getBoundingClientRect();
-    const ripple = document.createElement('span');
-    ripple.className = 'nav-ripple';
-    ripple.style.left = `${event.clientX - bounds.left}px`;
-    ripple.style.top = `${event.clientY - bounds.top}px`;
-    ripple.setAttribute('aria-hidden', 'true');
-    link.appendChild(ripple);
-    ripple.addEventListener('animationend', () => ripple.remove());
-  });
-});
+          <div class="builder-field range-field training-days-field">
+            <div class="range-label-row">
+              <label for="training-days">How many training days?</label>
+              <output id="training-days-value" for="training-days" aria-live="polite">1 day</output>
+            </div>
+            <input id="training-days" name="days" type="range" min="1" max="365" value="1" step="1" required>
+            <div class="range-scale" aria-hidden="true"><span>1 day</span><span>365 days</span></div>
+            <small>Slide to choose the total number of training days at your selected daily hours.</small>
+          </div>
+        </form>
+      </div>
 
-const sectionNavigationLinks = navigationLinks.filter((link) => link.getAttribute('href')?.startsWith('#'));
-const visibleNavigationSections = new Map();
+      <aside class="custom-summary" aria-label="Custom subscription summary">
+        <p class="summary-label">Your custom plan</p>
+        <div class="summary-line"><span>Sport</span><strong id="summary-sport">Not selected</strong></div>
+        <div class="summary-line"><span>Hours per day</span><strong id="summary-hours">1</strong></div>
+        <div class="summary-line"><span>Training days</span><strong id="summary-days">0</strong></div>
+        <div class="summary-line"><span>Rate</span><strong>$15 / hour</strong></div>
+        <div class="summary-line"><span>Regular price</span><strong id="summary-regular">$0.00</strong></div>
+        <div class="summary-discount">
+          <span>Package discount</span>
+          <strong id="summary-discount">0% off</strong>
+        </div>
+        <div class="summary-savings"><span>You save</span><strong id="summary-savings">$0.00</strong></div>
+        <div class="summary-total"><span>Estimated total</span><strong id="summary-total">$0.00</strong></div>
 
-if ('IntersectionObserver' in window) {
-  const navigationObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) visibleNavigationSections.set(entry.target.id, entry.intersectionRatio);
-      else visibleNavigationSections.delete(entry.target.id);
-    });
+        <fieldset class="payment-options" id="payment-options">
+          <legend>How would you like to pay?</legend>
 
-    const activeSection = [...visibleNavigationSections.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
-    sectionNavigationLinks.forEach((link) => {
-      const isActive = link.getAttribute('href') === `#${activeSection}`;
-      link.classList.toggle('is-active', isActive);
-      if (isActive) link.setAttribute('aria-current', 'location');
-      else if (link.getAttribute('aria-current') === 'location') link.removeAttribute('aria-current');
-    });
-  }, { rootMargin: '-15% 0px -60% 0px', threshold: [0.05, 0.25, 0.5, 0.75] });
+          <label class="payment-option payment-option-major">
+            <input id="pay-upfront" type="checkbox" value="Pay upfront" data-payment-label="Pay upfront">
+            <span><strong>Pay upfront</strong><small>Pay the whole amount at once</small></span>
+          </label>
 
-  sectionNavigationLinks.forEach((link) => {
-    const section = document.querySelector(link.getAttribute('href'));
-    if (section) navigationObserver.observe(section);
-  });
-}
+          <label class="payment-option">
+            <input id="pay-cash" type="checkbox" value="Pay with cash" data-payment-label="Cash">
+            <span><strong>Pay with cash</strong><small>Eligible for cash back when paid upfront</small></span>
+          </label>
 
-document.querySelector('#current-year').textContent = new Date().getFullYear();
+          <label class="payment-option">
+            <input id="pay-card" type="checkbox" value="Pay with card" data-payment-label="Card">
+            <span><strong>Pay with card</strong><small>Use a debit or credit card</small></span>
+          </label>
 
-const requestedPlan = new URLSearchParams(window.location.search).get('plan');
-if (requestedPlan) {
-  document.querySelector('#message').value = requestedPlan;
-}
+          <label class="payment-option payment-option-major">
+            <input id="pay-online" type="checkbox" value="Pay online" data-payment-label="Pay online">
+            <span><strong>Pay online</strong><small>Complete payment through the online process</small></span>
+          </label>
 
-const programCards = [...document.querySelectorAll('.program-card')];
-const selectedProgramName = document.querySelector('#selected-program-name');
-const selectedProgramSummary = document.querySelector('#selected-program-summary');
-const selectedProgramAction = document.querySelector('#selected-program-action');
+          <label class="payment-option">
+            <input id="pay-three-months" type="checkbox" value="Every 3 months" data-payment-label="Every 3 months">
+            <span><strong>Every 3 months</strong><small>Make payments once every three months</small></span>
+          </label>
 
-function selectProgram(card) {
-  programCards.forEach((programCard) => {
-    const isSelected = programCard === card;
-    programCard.classList.toggle('is-selected', isSelected);
-    const selectButton = programCard.querySelector('.program-select');
-    selectButton.setAttribute('aria-pressed', String(isSelected));
-    selectButton.innerHTML = isSelected
-      ? 'Selected <span aria-hidden="true">&#10003;</span>'
-      : 'Choose program <span aria-hidden="true">&rarr;</span>';
-  });
+          <label class="payment-option">
+            <input id="pay-six-months" type="checkbox" value="Every 6 months" data-payment-label="Every 6 months">
+            <span><strong>Every 6 months</strong><small>Make payments once every six months</small></span>
+          </label>
 
-  selectedProgramName.textContent = card.dataset.program;
-  selectedProgramSummary.textContent = card.dataset.summary;
-}
+          <p class="payment-status" id="payment-status" aria-live="polite">Choose your preferred payment options.</p>
+        </fieldset>
 
-programCards.forEach((card) => {
-  card.querySelector('.program-select').addEventListener('click', () => selectProgram(card));
+        <div class="summary-cashback" id="summary-cashback" hidden><span>2% cash back</span><strong id="summary-cashback-value">$0.00</strong></div>
+        <p class="cashback-note"><strong>Cash reward:</strong> Pay the whole amount upfront in cash and receive 2% cash back after payment is confirmed.</p>
+        <a class="button custom-register-button disabled" id="custom-register-button" href="index.html#contact" aria-disabled="true">Continue to Registration</a>
+        <small>Payment is requested only after the academy confirms schedule and availability.</small>
+      </aside>
+    </section>
 
-  card.addEventListener('pointermove', (event) => {
-    if (event.pointerType !== 'mouse' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const bounds = card.getBoundingClientRect();
-    const x = event.clientX - bounds.left;
-    const y = event.clientY - bounds.top;
-    card.style.setProperty('--spot-x', `${x}px`);
-    card.style.setProperty('--spot-y', `${y}px`);
-    card.style.setProperty('--tilt-x', `${((y / bounds.height) - 0.5) * -3}deg`);
-    card.style.setProperty('--tilt-y', `${((x / bounds.width) - 0.5) * 3}deg`);
-  });
+    <section class="discount-rules">
+      <article><strong>1–50 days</strong><span>Standard flexible rate</span></article>
+      <article><strong>51–69 days</strong><span>5% package discount</span></article>
+      <article><strong>70–120 days</strong><span>10% package discount</span></article>
+      <article><strong>121–365 days</strong><span>15% package discount</span></article>
+    </section>
+  </main>
 
-  card.addEventListener('pointerleave', () => {
-    card.style.setProperty('--tilt-x', '0deg');
-    card.style.setProperty('--tilt-y', '0deg');
-  });
-});
+  <footer>
+    <a class="logo" href="index.html"><span class="logo-mark">P</span><span>Peak Sports Academy</span></a>
+    <p>Train hard. Grow strong. Play with purpose.</p>
+    <p>&copy; <span id="current-year"></span> Peak Sports Academy</p>
+  </footer>
 
-selectedProgramAction.addEventListener('click', () => {
-  const messageField = document.querySelector('#message');
-  messageField.value = `I would like to learn more about the ${selectedProgramName.textContent} program.`;
-});
-
-const contactForm = document.querySelector('#academy-contact-form');
-const formStatus = document.querySelector('#form-status');
-const submitButton = contactForm.querySelector('button[type="submit"]');
-const googleFormEndpoint = 'https://docs.google.com/forms/d/e/1FAIpQLSd_SSEP9a_roGx0edykitzeqfp6JHqs5gCLEzRBrrCy0YJifw/formResponse';
-
-contactForm.addEventListener('submit', async (event) => {
-  event.preventDefault();
-
-  if (!contactForm.checkValidity()) {
-    contactForm.reportValidity();
-    return;
-  }
-
-  const name = contactForm.elements.name.value.trim();
-  const responseData = new URLSearchParams({
-    'entry.337899965': name,
-    'entry.1642063683': contactForm.elements.email.value.trim(),
-    'entry.1902716118': contactForm.elements.mobile.value.trim(),
-    'entry.758413488': contactForm.elements.sport.options[contactForm.elements.sport.selectedIndex].text,
-    'entry.1173633339': contactForm.elements.message.value.trim()
-  });
-
-  submitButton.disabled = true;
-  submitButton.textContent = 'Sending...';
-  formStatus.classList.remove('error');
-  formStatus.textContent = '';
-
-  try {
-    await fetch(googleFormEndpoint, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body: responseData.toString()
-    });
-
-    formStatus.textContent = `Thanks, ${name}! Your message was sent successfully. We will contact you soon.`;
-    contactForm.reset();
-  } catch (error) {
-    formStatus.classList.add('error');
-    formStatus.textContent = 'We could not send your message. Please check your connection and try again.';
-  } finally {
-    submitButton.disabled = false;
-    submitButton.textContent = 'Send Message';
-  }
-});
-
-const coachLauncher = document.querySelector('#coach-launcher');
-const coachAssistant = document.querySelector('#coach-assistant');
-const coachClose = document.querySelector('#coach-close');
-const coachForm = document.querySelector('#coach-input-form');
-const coachInput = document.querySelector('#coach-input');
-const coachMessages = document.querySelector('#coach-messages');
-
-const coachAnswers = {
-  sport: 'For an 8-year-old, soccer, basketball, swimming, tennis, and beginner cricket are all great choices. The best fit depends on what the child enjoys: team play, individual skill, water activities, or fast movement. We recommend trying an introductory session before choosing.',
-  equipment: 'Equipment depends on the sport. Most beginners need comfortable sports clothing, athletic shoes, and a water bottle. Soccer usually needs shin guards and cleats; basketball needs court shoes; cricket needs a bat, pads, gloves, and helmet; swimming needs a swimsuit, goggles, and cap. Ask us before buying specialist gear because some programs provide starter equipment.',
-  timings: 'Academy timings vary by sport, age group, and season. Youth sessions are generally scheduled after school on weekdays, with additional morning and afternoon sessions on weekends. Send us your preferred sport through the registration form and our team will confirm the current schedule.',
-  fee: 'Fees vary by sport, program length, and training level. Introductory, group, camp, and performance programs have different rates. Use the registration form below and select your sport; our team will send you the current fee and any available trial-session options.',
-  register: 'To register, go to the contact form on this page, enter your name, email, mobile number, select a sport, and send your message. Our academy team will contact you with the schedule, fee, and next steps.',
-  greeting: 'Hi! I can help you choose a sport and answer questions about equipment, timings, fees, and registration. What would you like to know?',
-  fallback: 'I can help with sport selection, equipment, academy timings, fees, and registration. Try asking one of those questions, or use the contact form for help from our academy team.'
-};
-
-let coachKnowledge = [];
-
-function parseCoachKnowledge(fileText) {
-  return fileText
-    .split(/^---\s*$/m)
-    .map((block) => {
-      const question = block.match(/^Q:\s*(.+)$/m)?.[1]?.trim();
-      const keywords = block.match(/^Keywords:\s*(.+)$/m)?.[1]?.trim();
-      const answer = block.match(/^A:\s*([\s\S]+)$/m)?.[1]?.trim();
-      if (!question || !answer) return null;
-      return { question, keywords: keywords || '', answer };
-    })
-    .filter(Boolean);
-}
-
-const knowledgeReady = fetch('ai-coach-knowledge.txt')
-  .then((response) => {
-    if (!response.ok) throw new Error('Knowledge base could not be loaded.');
-    return response.text();
-  })
-  .then((fileText) => {
-    coachKnowledge = parseCoachKnowledge(fileText);
-  })
-  .catch(() => {
-    // Local file previews can block text-file requests. Built-in answers remain available.
-    coachKnowledge = [];
-  });
-
-function normalizeWords(text) {
-  const ignoredWords = new Set(['a', 'an', 'and', 'are', 'can', 'do', 'for', 'how', 'i', 'is', 'of', 'the', 'to', 'what', 'which', 'with', 'you']);
-  return [...new Set(text.toLowerCase().replace(/[^a-z0-9\s-]/g, ' ').split(/\s+/).filter((word) => word.length > 1 && !ignoredWords.has(word)))];
-}
-
-function findKnowledgeAnswer(question) {
-  const userWords = normalizeWords(question);
-  let bestMatch = null;
-  let bestScore = 0;
-
-  coachKnowledge.forEach((entry) => {
-    const questionWords = normalizeWords(entry.question);
-    const keywordWords = normalizeWords(entry.keywords);
-    const questionScore = userWords.filter((word) => questionWords.includes(word)).length * 3;
-    const keywordScore = userWords.filter((word) => keywordWords.includes(word)).length * 2;
-    const score = questionScore + keywordScore;
-    if (score > bestScore) {
-      bestScore = score;
-      bestMatch = entry;
-    }
-  });
-
-  return bestScore >= 2 ? bestMatch?.answer : null;
-}
-
-function getCoachAnswer(question) {
-  const questionText = question.toLowerCase();
-  if (/\b(hi|hello|hey)\b/.test(questionText)) return coachAnswers.greeting;
-  if (/register|registration|enroll|enrol|join|sign up/.test(questionText)) return coachAnswers.register;
-  if (/fee|fees|cost|price|payment/.test(questionText)) return coachAnswers.fee;
-  if (/time|timing|schedule|open|hour/.test(questionText)) return coachAnswers.timings;
-  if (/equipment|gear|need|bring|wear/.test(questionText)) return coachAnswers.equipment;
-  if (/sport|8-year|8 year|child|kid|age/.test(questionText)) return coachAnswers.sport;
-  return coachAnswers.fallback;
-}
-
-function addCoachMessage(message, sender, link = null) {
-  const messageElement = document.createElement('div');
-  messageElement.className = `coach-message ${sender}-message`;
-  messageElement.textContent = message;
-  if (link) {
-    const actionLink = document.createElement('a');
-    actionLink.className = 'coach-action-link';
-    actionLink.href = link.href;
-    actionLink.textContent = link.label;
-    messageElement.appendChild(actionLink);
-  }
-  coachMessages.appendChild(messageElement);
-  coachMessages.scrollTop = coachMessages.scrollHeight;
-}
-
-async function askCoach(question) {
-  const cleanQuestion = question.trim();
-  if (!cleanQuestion) return;
-  addCoachMessage(cleanQuestion, 'user');
-  await knowledgeReady;
-  if (/custom subscription|custom plan|build.*plan|make.*subscription|own subscription|choose.*days/.test(cleanQuestion.toLowerCase())) {
-    window.setTimeout(() => addCoachMessage(
-      'You can create a custom sports subscription by choosing your sport and any number of training days from 1 to 365. Discounts are applied automatically.',
-      'assistant',
-      { href: 'custom-subscription.html', label: 'Build a custom subscription' }
-    ), 350);
-    return;
-  }
-  if (/subscription|subscribe|membership|payment|pay|hourly|monthly|quarterly|annual|six month|6 month/.test(cleanQuestion.toLowerCase())) {
-    window.setTimeout(() => addCoachMessage(
-      'You can compare all Peak training subscriptions and choose a payment plan on our subscriptions page.',
-      'assistant',
-      { href: 'subscriptions.html', label: 'View subscriptions & payment' }
-    ), 350);
-    return;
-  }
-  const answer = findKnowledgeAnswer(cleanQuestion) || getCoachAnswer(cleanQuestion);
-  window.setTimeout(() => addCoachMessage(answer, 'assistant'), 350);
-}
-
-function setCoachOpen(isOpen) {
-  coachAssistant.classList.toggle('open', isOpen);
-  coachAssistant.setAttribute('aria-hidden', String(!isOpen));
-  coachLauncher.setAttribute('aria-expanded', String(isOpen));
-  if (isOpen) coachInput.focus();
-}
-
-coachLauncher.addEventListener('click', () => {
-  setCoachOpen(!coachAssistant.classList.contains('open'));
-});
-
-coachClose.addEventListener('click', () => setCoachOpen(false));
-
-coachForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  askCoach(coachInput.value);
-  coachForm.reset();
-});
-
-document.querySelectorAll('[data-question]').forEach((button) => {
-  button.addEventListener('click', () => askCoach(button.dataset.question));
-});
-
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && coachAssistant.classList.contains('open')) {
-    setCoachOpen(false);
-    coachLauncher.focus();
-  }
-});
+  <script src="custom-subscription.js"></script>
+</body>
+</html>
