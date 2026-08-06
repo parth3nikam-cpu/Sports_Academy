@@ -45,9 +45,16 @@
         <h2 id="discount-heading">Automatic package discounts</h2>
         <p>Discounts are applied instantly based on the number of training days you choose.</p>
       </div>
-      <picture class="discount-banner-picture">
-        <img class="discount-banner-image" src="custom-plan-discounts.png" width="1824" height="864" loading="eager" decoding="async" alt="5% off for 51 to 69 days, 10% off for 70 to 120 days, and 15% off for 121 or more days">
-      </picture>
+      <div class="discount-banner-frame">
+        <picture class="discount-banner-picture">
+          <img class="discount-banner-image" id="discount-banner-image" src="custom-plan-discounts.png" width="1824" height="864" loading="eager" decoding="async" alt="5% off for 51 to 69 days, 10% off for 70 to 120 days, and 15% off for 121 or more days">
+        </picture>
+        <div class="discount-banner-fallback" id="discount-banner-fallback" hidden aria-label="Custom plan discount offers">
+          <article><strong>5%<span>OFF</span></strong><small>51&ndash;69 DAYS</small></article>
+          <article><strong>10%<span>OFF</span></strong><small>70&ndash;120 DAYS</small></article>
+          <article><strong>15%<span>OFF</span></strong><small>121+ DAYS</small></article>
+        </div>
+      </div>
     </section>
 
     <section class="plan-builder" id="plan-builder" aria-labelledby="builder-heading">
