@@ -255,12 +255,12 @@ footer p { margin: 0; }
 .founder-promise { padding: 90px 8vw; color: var(--white); text-align: center; background: var(--blue); }
 .founder-promise h2 { max-width: 850px; margin-left: auto; margin-right: auto; color: var(--white); }
 .founder-promise > p:not(.eyebrow) { max-width: 780px; margin-left: auto; margin-right: auto; color: #c8d4ef; }
-.founder-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 32px; }
-.founder-actions .button { transition: transform 180ms ease, box-shadow 180ms ease, color 180ms ease, background-color 180ms ease, border-color 180ms ease; }
-.founder-actions .button:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 14px 34px rgba(0, 0, 0, .24); }
-.founder-actions .button-primary:hover { color: var(--navy); background: var(--white); }
-.founder-actions .button-secondary:hover { color: var(--navy); background: var(--lime); border-color: var(--lime); }
-.founder-actions .button:focus-visible { outline: 3px solid var(--white); outline-offset: 4px; }
+.about-top-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
+.about-top-actions .button { min-width: 180px; padding: 18px 30px; font-size: 1.05rem; transition: transform 180ms ease, box-shadow 180ms ease, color 180ms ease, background-color 180ms ease, border-color 180ms ease; }
+.about-top-actions .button:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 14px 34px rgba(0, 0, 0, .24); }
+.about-top-actions .button-primary:hover { color: var(--navy); background: var(--white); }
+.about-top-actions .button-secondary:hover { color: var(--navy); background: var(--lime); border-color: var(--lime); }
+.about-top-actions .button:focus-visible { outline: 3px solid var(--white); outline-offset: 4px; }
 .plan-builder { display: grid; grid-template-columns: 1fr .8fr; align-items: start; gap: clamp(40px, 8vw, 110px); padding: 95px 8vw; background: var(--white); }
 .builder-intro { color: var(--muted); }
 .builder-form-panel form { display: grid; gap: 22px; margin-top: 35px; }
@@ -341,6 +341,7 @@ footer p { margin: 0; }
   .discount-banner-fallback { grid-template-columns: 1fr; }
   .discount-banner-fallback article { min-height: 240px; }
   .about-me-hero, .founder-story, .founder-vision, .academy-story, .about-approach, .athlete-experience, .family-partnership, .academy-future, .founder-promise { padding-left: 22px; padding-right: 22px; }
+  .about-top-actions .button { width: 100%; }
   .academy-principles { grid-template-columns: 1fr; }
   .approach-steps li { grid-template-columns: 1fr; gap: 4px; }
   .experience-list { grid-template-columns: 1fr; }
