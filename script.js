@@ -13,12 +13,113 @@ navigation.addEventListener('click', (event) => {
   }
 });
 
+const navigationLinks = [...navigation.querySelectorAll('a')];
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+navigationLinks.forEach((link) => {
+  link.addEventListener('pointermove', (event) => {
+    if (event.pointerType !== 'mouse' || reducedMotion.matches) return;
+    const bounds = link.getBoundingClientRect();
+    link.style.setProperty('--nav-x', `${(event.clientX - bounds.left - (bounds.width / 2)) * 0.1}px`);
+    link.style.setProperty('--nav-y', `${(event.clientY - bounds.top - (bounds.height / 2)) * 0.13}px`);
+  });
+
+  link.addEventListener('pointerleave', () => {
+    link.style.setProperty('--nav-x', '0px');
+    link.style.setProperty('--nav-y', '0px');
+  });
+
+  link.addEventListener('pointerdown', (event) => {
+    if (reducedMotion.matches) return;
+    const oldRipple = link.querySelector('.nav-ripple');
+    if (oldRipple) oldRipple.remove();
+    const bounds = link.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    ripple.className = 'nav-ripple';
+    ripple.style.left = `${event.clientX - bounds.left}px`;
+    ripple.style.top = `${event.clientY - bounds.top}px`;
+    ripple.setAttribute('aria-hidden', 'true');
+    link.appendChild(ripple);
+    ripple.addEventListener('animationend', () => ripple.remove());
+  });
+});
+
+const sectionNavigationLinks = navigationLinks.filter((link) => link.getAttribute('href')?.startsWith('#'));
+const visibleNavigationSections = new Map();
+
+if ('IntersectionObserver' in window) {
+  const navigationObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) visibleNavigationSections.set(entry.target.id, entry.intersectionRatio);
+      else visibleNavigationSections.delete(entry.target.id);
+    });
+
+    const activeSection = [...visibleNavigationSections.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
+    sectionNavigationLinks.forEach((link) => {
+      const isActive = link.getAttribute('href') === `#${activeSection}`;
+      link.classList.toggle('is-active', isActive);
+      if (isActive) link.setAttribute('aria-current', 'location');
+      else if (link.getAttribute('aria-current') === 'location') link.removeAttribute('aria-current');
+    });
+  }, { rootMargin: '-15% 0px -60% 0px', threshold: [0.05, 0.25, 0.5, 0.75] });
+
+  sectionNavigationLinks.forEach((link) => {
+    const section = document.querySelector(link.getAttribute('href'));
+    if (section) navigationObserver.observe(section);
+  });
+}
+
 document.querySelector('#current-year').textContent = new Date().getFullYear();
 
 const requestedPlan = new URLSearchParams(window.location.search).get('plan');
 if (requestedPlan) {
   document.querySelector('#message').value = requestedPlan;
 }
+
+const programCards = [...document.querySelectorAll('.program-card')];
+const selectedProgramName = document.querySelector('#selected-program-name');
+const selectedProgramSummary = document.querySelector('#selected-program-summary');
+const selectedProgramAction = document.querySelector('#selected-program-action');
+
+function selectProgram(card) {
+  programCards.forEach((programCard) => {
+    const isSelected = programCard === card;
+    programCard.classList.toggle('is-selected', isSelected);
+    const selectButton = programCard.querySelector('.program-select');
+    selectButton.setAttribute('aria-pressed', String(isSelected));
+    selectButton.innerHTML = isSelected
+      ? 'Selected <span aria-hidden="true">&#10003;</span>'
+      : 'Choose program <span aria-hidden="true">&rarr;</span>';
+  });
+
+  selectedProgramName.textContent = card.dataset.program;
+  selectedProgramSummary.textContent = card.dataset.summary;
+}
+
+programCards.forEach((card) => {
+  card.querySelector('.program-select').addEventListener('click', () => selectProgram(card));
+
+  card.addEventListener('pointermove', (event) => {
+    if (event.pointerType !== 'mouse' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const bounds = card.getBoundingClientRect();
+    const x = event.clientX - bounds.left;
+    const y = event.clientY - bounds.top;
+    card.style.setProperty('--spot-x', `${x}px`);
+    card.style.setProperty('--spot-y', `${y}px`);
+    card.style.setProperty('--tilt-x', `${((y / bounds.height) - 0.5) * -3}deg`);
+    card.style.setProperty('--tilt-y', `${((x / bounds.width) - 0.5) * 3}deg`);
+  });
+
+  card.addEventListener('pointerleave', () => {
+    card.style.setProperty('--tilt-x', '0deg');
+    card.style.setProperty('--tilt-y', '0deg');
+  });
+});
+
+selectedProgramAction.addEventListener('click', () => {
+  const messageField = document.querySelector('#message');
+  messageField.value = `I would like to learn more about the ${selectedProgramName.textContent} program.`;
+});
 
 const contactForm = document.querySelector('#academy-contact-form');
 const formStatus = document.querySelector('#form-status');
