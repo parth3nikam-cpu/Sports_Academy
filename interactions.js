@@ -1,6 +1,33 @@
 const interactiveSelector = 'button, a.button, .main-nav a, .text-action, .coach-action-link';
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+const siteMenuButton = document.querySelector('.menu-toggle');
+const siteNavigation = document.querySelector('.main-nav');
+
+if (siteMenuButton && siteNavigation) {
+  siteMenuButton.addEventListener('click', () => {
+    const isOpen = siteNavigation.classList.toggle('open');
+    siteMenuButton.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  siteNavigation.addEventListener('click', (event) => {
+    if (!event.target.closest('a')) return;
+    siteNavigation.classList.remove('open');
+    siteMenuButton.setAttribute('aria-expanded', 'false');
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || !siteNavigation.classList.contains('open')) return;
+    siteNavigation.classList.remove('open');
+    siteMenuButton.setAttribute('aria-expanded', 'false');
+    siteMenuButton.focus();
+  });
+}
+
+document.querySelectorAll('#current-year').forEach((year) => {
+  year.textContent = new Date().getFullYear();
+});
+
 function isUnavailable(element) {
   return element.disabled || element.getAttribute('aria-disabled') === 'true';
 }
