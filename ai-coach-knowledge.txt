@@ -243,8 +243,8 @@ Keywords: six month 6 months annual yearly year subscription 800 1200 dollars
 A: The six-month subscription is $800, and the annual subscription is $1,200. Visit the Subscriptions page to choose a plan and continue to registration.
 ---
 Q: Can I build my own custom subscription?
-Keywords: custom subscription build own plan choose days flexible days
-A: Yes. Use the Build a Plan page to choose a sport and any number of one-hour training days from 1 to 365. The page calculates your price and discount automatically.
+Keywords: custom subscription build own plan choose days choose hours flexible days payment preferences
+A: Yes. Use the Build a Plan page to choose a sport, 1 to 24 training hours per day, 1 to 365 training days, and your payment preferences. The page calculates the price, package discount, savings, and estimated total automatically.
 ---
 Q: What discounts are available for a custom subscription?
 Keywords: custom plan discount 5 percent 10 percent 15 percent 50 70 120 days
@@ -252,7 +252,7 @@ A: Custom plans receive 5% off for 51 to 69 days, 10% off for 70 to 120 days, an
 ---
 Q: How much does a custom training plan cost?
 Keywords: custom training plan price cost rate calculate 15 day hour
-A: Custom plans use one one-hour training session per selected day at $15 per day before discounts. Choose 1 to 365 days on the Build a Plan page to see the regular price, savings, and estimated total.
+A: Custom plans cost $15 per hour before discounts. The regular price is calculated by multiplying the selected hours per day by the selected training days and the $15 hourly rate. Choose your sport, 1 to 24 hours per day, and 1 to 365 days on the Build a Plan page to see the live total.
 ---
 Q: Who is the founder of Peak Sports Academy?
 Keywords: founder owner about me person behind academy director started peak
@@ -261,3 +261,23 @@ A: Peak Sports Academy was created by a founder who believes coaching should bui
 Q: What is Peak Sports Academy about?
 Keywords: academy about mission purpose values story approach
 A: Peak Sports Academy is an athlete-first training community focused on sport-specific development, confidence, teamwork, leadership, consistency, and respect. Visit the About Me page to learn more about the academy's purpose and approach.
+---
+Q: How does Peak Sports Academy work?
+Keywords: how we work process coaching stages listen plan coach review customers
+A: Peak follows four clear stages: listen first, build a suitable plan, coach with purpose, and review and adapt. Visit the How We Work page to explore the full process.
+---
+Q: How does the academy treat customers and families?
+Keywords: customer service care families respect communication support treat customers
+A: Peak aims to welcome families warmly, provide clear answers, offer honest guidance, and invite open feedback. The academy treats every athlete and family with respect and explains schedules, pricing, equipment, and next steps clearly.
+---
+Q: Is training flexible around school and family schedules?
+Keywords: flexibility flexible school family work travel schedule weekend early late
+A: Yes. Peak considers school, work, travel, and family commitments when discussing available training times. Choose an after-school, weekend, early, late, or custom-plan preference, and the academy will confirm a practical option based on coach and facility availability.
+---
+Q: What payment choices are available for a custom plan?
+Keywords: custom plan payment upfront cash card online three months six months installments
+A: The Build a Plan page includes payment preferences for paying upfront, paying with cash, paying with card, paying online, every three months, or every six months. Conflicting choices are locked automatically so the selection stays clear.
+---
+Q: Is there cash back for paying a custom plan in cash?
+Keywords: cash back cashback two percent 2 percent upfront whole amount cash
+A: Yes. When the whole custom-plan amount is paid upfront in cash, the page shows a 2% cash-back reward. Final payment details are confirmed by the academy during registration.
