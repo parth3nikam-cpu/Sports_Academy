@@ -1,14 +1,7 @@
-const menuButton = document.querySelector('.menu-toggle');
-const navigation = document.querySelector('.main-nav');
 const planButtons = document.querySelectorAll('[data-plan]');
 const selectedPlan = document.querySelector('#selected-plan');
 const selectedPrice = document.querySelector('#selected-price');
 const registrationLink = document.querySelector('#continue-registration');
-
-menuButton.addEventListener('click', () => {
-  const isOpen = navigation.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(isOpen));
-});
 
 planButtons.forEach((button) => {
   button.addEventListener('click', () => {
