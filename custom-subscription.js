@@ -1,5 +1,3 @@
-const menuButton = document.querySelector('.menu-toggle');
-const navigation = document.querySelector('.main-nav');
 const daysSlider = document.querySelector('#training-days');
 const daysValue = document.querySelector('#training-days-value');
 const hoursSlider = document.querySelector('#hours-per-day');
@@ -19,11 +17,6 @@ const paymentStatus = document.querySelector('#payment-status');
 const cashbackSummary = document.querySelector('#summary-cashback');
 const cashbackValue = document.querySelector('#summary-cashback-value');
 const hourlyRate = 15;
-
-menuButton.addEventListener('click', () => {
-  const isOpen = navigation.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(isOpen));
-});
 
 function showDiscountFallback() {
   discountBannerImage.hidden = true;
